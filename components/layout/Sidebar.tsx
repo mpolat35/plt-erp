@@ -69,6 +69,7 @@ const navigation: NavSection[] = [
         children: [
           { name: "Rol-Yetki",       href: "/tanimlamalar/rol-yetki",       icon: UserCheck      },
           { name: "Kurum",           href: "/tanimlamalar/kurum",            icon: Building2      },
+          { name: "Organizasyon",    href: "/tanimlamalar/organizasyon",     icon: Layers         },
           { name: "Kullanıcı",       href: "/tanimlamalar/kullanici",        icon: Users          },
           { name: "Yer Bilgileri",   href: "/tanimlamalar/yer-bilgileri",    icon: Globe          },
           { name: "Döviz Kurları",   href: "/tanimlamalar/doviz-kurlari",    icon: TrendingUp     },

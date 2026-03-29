@@ -1,0 +1,216 @@
+65 PROJE ÖZETİ    ................................................................................................................................. 12
+66 a. Proje Kimlik Kartı ................................................................................................................... 12
+67 i. Temel Proje Verileri ............................................................................................................ 12
+68 ii. Amaç ve Gerekçe ............................................................................................................... 13
+69 iii. Yapılan İşin Tanımı ........................................................................................................... 13
+70 iv. Uzun ve Kısa Dönemli Amaçlarla İlişkisi ......................................................................... 13
+71 v. Finansman Kaynağı ve Planı ............................................................................................. 14
+72 vi. Proje Analiz Sonuçları....................................................................................................... 15
+73 vii.Etüt Bilgileri ....................................................................................................................... 15
+74 b. Projenin Gerekçesi ................................................................................................................ 16
+76 c. Projenin Tanımı ve Kapsamı ................................................................................................. 18
+77 d. Fizibilite Etüdü Analiz Sonuçları ........................................................................................... 25
+78 e. Projenin Etkileri ...................................................................................................................... 25
+80 1.1.     Projenin Politika Dökümanlarına Uygunluğu ................................................................ 29
+81 1.2.     Kurumsal Yapılar ve Yasal Mevzuat ............................................................................. 32
+82 1.2.1. Organize Sanayi Bölgeleri Tanımı .............................................................................. 34
+83 1.2.2. Türkiye’de Organize Sanayi Bölgeleri......................................................................... 35
+84 1.2.3. Türkiye’de Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri .................................... 37
+85 1.2.4. Organize Sanayi Bölgeleri ve Yasal Mevzuat ............................................................ 40
+86 1.2.5. Organize Sanayi Bölgeleri’nin Kuruluş Aşamaları ..................................................... 40
+87 1.2.6. Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri Uygulama Yönetmeliği ............... 41
+88 1.2.7. İhtisas OSB’ler ............................................................................................................. 41
+89 1.2.8. Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri ...................................................... 41
+90 1.2.9. Jeotermal Seracılık ile İlgili Mevzuat ......................................................................... 42
+91 1.3. Projenin Diğer Kurumların Projeleri İle İlişkisi .................................................................. 42
+92 1.3.1. Proje İle Eşzamanlı Götürülmesi Gereken Diğer Kurumların Projeleri ..................... 42
+93 1.3.2. Projede Başka Kurumların Projeleri ile Fiziki Çakışma Oluşmamasına Yönelik
+95 1.4. Proje İle İlgili Geçmişte Yapılmış Etüt Araştırma ve Diğer Çalışmalar ........................... 57
+100 1.4.1. Proje Fikrinin Ortaya Çıkışı.......................................................................................... 57
+101 1.5. Proje İhtiyacı/Talebi ........................................................................................................... 59
+102 1.6. Proje Alternatifleri .............................................................................................................. 60
+103 1.6.1. Projesiz Durum ............................................................................................................ 60
+104 1.6.2. Bakım Onarım veya Tevsii Yatırımı ............................................................................ 60
+105 1.6.3. En İyi İkinci Alternatif .................................................................................................. 60
+106 1.6.4. En İyi Alternatif (Tercih edilen alternatif) ................................................................... 60
+107 1.7. Teknoloji ve Tasarım .......................................................................................................... 60
+108 1.7.1. Seralarda Kullanım Koşulları ...................................................................................... 62
+110 2.1. Fiziksel ve Coğrafi Özellikler ............................................................................................. 78
+111 2.2. Ekonomik ve Fiziksel Altyapı ............................................................................................. 94
+112 2.3.5. Bölgenin Tarımsal Ürünlere Ait Üretim Miktarları ..................................................... 94
+113 2.3.4. Bölgenin Sanayi Altyapısının Durumu ........................................................................ 97
+114 2.3. Sosyal Altyapı ve Sosyal Etkiler ......................................................................................... 99
+115 2.3.1. Bölgenin SEGE Sıralamasına Göre Değerlendirilmesi .............................................. 99
+116 2.3.2. TR22 Bölgesi İşgücü Göstergeleri ............................................................................ 102
+117 2.4. Çevresel Etkiler ................................................................................................................. 103
+118 2.5. Alternatifler, Yer Seçimi ve Arazi Maliyeti (Kamulaştırma Bedeli de Dahil) ................. 103
+120 3.1. Varsayımlar ....................................................................................................................... 104
+121 3.2. Talep Tahmin Yöntemi..................................................................................................... 104
+122 3.3. Talep Analizi ..................................................................................................................... 105
+123 3.4. Talep Tahmin Sonuçları ................................................................................................... 111
+124 3.5. Kapasite Seçimi................................................................................................................ 111
+126 4.1 Sabit Sermaye Yatırım Tutarı ........................................................................................... 129
+127 4.2. İşletme Sermayesi ............................................................................................................ 152
+128 4.2.1. İnsan Gücü İhtiyaci ve Tahmini Giderler .................................................................. 152
+129 4.2.2. Üretimin ve/veya Hizmetin Fiyatlandırılması .......................................................... 153
+130 4.3. Toplam Yatırım Tutarı ve Yıllara Dağılımı ....................................................................... 155
+132 5.1. Finansman Öngörüsü ...................................................................................................... 159
+133 5.2. Finansman İhtiyacı ve Kaynakları ................................................................................... 159
+134 5.3. Finansman Koşulları ve Sermaye Maliyeti ..................................................................... 159
+140 6.1. Ticari Analiz ile İlgili Temel Varsayımlar......................................................................... 160
+141 6.2. Ticari Faydalar ve Maliyetler............................................................................................ 160
+142 6.3. Ticari Nakit Akış Tablosu ................................................................................................. 160
+143 6.4. Ticari Fayda Maliyet Analizi ............................................................................................. 161
+145 7.1. Ekonomik Faydalar ve Maliyetler .................................................................................... 166
+146 7.2. Ekonomik Fayda Maliyet Analizi ..................................................................................... 167
+147 7.3. Maliyet Etkinlik Analizi ..................................................................................................... 167
+149 8.1. Duyarlılık Analizi ............................................................................................................... 168
+150 8.2. Proje İle İlgili Riskler ve Etkiler......................................................................................... 168
+151 8.3. Temel Risklerle İlgili Risk Azaltma Tedbirleri ................................................................. 168
+153 9.1. Çevresel Etkilerin Ön Değerlendirmesi ........................................................................... 169
+154 9.2. Çevresel Riskler ve Azaltma Tedbirleri ........................................................................... 169
+156 10.1. Projenin Sosyal Etkileri .................................................................................................. 170
+157 10.2. Projenin Toplumsal Gruplara Etkisi .............................................................................. 170
+158 10.3. Bölgesel Düzeydeki Etkisi .............................................................................................. 170
+160 11.1. Proje Yürütücüsü Kuruluş ve Teknik Kapasitesi .......................................................... 172
+161 11.2. Proje Organizasyonu ve Yönetim .................................................................................. 172
+162 11.3. Proje Uygulama Planı ve Projede Kritik Aşamalar ....................................................... 173
+164 12.1. Projenin Ticari ve Ekonomik Yapılabilirliği İle İlgili Sonuçlar ...................................... 175
+165 12.2. Projenin Sürdürülebilirliği .............................................................................................. 175
+166 12.3. Projeye İlişkin Temel Riskler ......................................................................................... 176
+381 PROJE ÖZETİ
+382 a. Proje Kimlik Kartı
+383 i. Temel Proje Verileri
+395 2.1.Yol İmalatları
+396 2.2.Yağmur Suyu Şebekesi
+397 2.3.İçme Suyu Şebekesi
+398 2.4.Atık Su Şebekesi
+399 2.5.Sulama Suyu Şebekesi
+400 2.6.Elektrik ve Telekom
+402 3.1.İdari Bina
+403 3.2.Sosyal Tesis Binası
+404 3.3.Isı Merkezi
+427 ii. Amaç ve Gerekçe
+460 iii. Yapılan İşin Tanımı
+472 iv. Uzun ve Kısa Dönemli Amaçlarla İlişkisi
+500 v. Finansman Kaynağı ve Planı
+527 vi. Proje Analiz Sonuçları
+572 vii.Etüt Bilgileri
+584 b. Projenin Gerekçesi
+659 c. Projenin Tanımı ve Kapsamı
+737 2.322.419.42 m2  bir alana kurulacaktır.
+781 320.451,81
+789 1.413.174,76
+798 10.000 m2 olacak şekilde planlanmıştır.
+880 d. Fizibilite Etüdü Analiz Sonuçları
+888 e. Projenin Etkileri
+943 30.000 m 2 ve 40.000 m 2 olmak üzere seralar planlandı.
+1013 1.1. Projenin Politika Dökümanlarına Uygunluğu
+1158 1.2. Kurumsal Yapılar ve Yasal Mevzuat
+1161 10.11.2009  Tarih  ve  27402  sayılı  Resmi  Gazetede  yayımlanarak  yürürlüğe  giren  “Tarıma
+1259 1.2.1. Organize Sanayi Bölgeleri Tanımı
+1304 02.02.2019 tarihli ve 30674 sayılı Resmi Gazete’de yayımlanarak yürürlüğe girmiştir.
+1310 1.2.2. Türkiye’de Organize Sanayi Bölgeleri
+1350 1.2.3. Türkiye’de Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri
+1434 1.2.4. Organize Sanayi Bölgeleri ve Yasal Mevzuat
+1472 1.2.5. Organize Sanayi Bölgeleri’nin Kuruluş Aşamaları
+1486 1.2.6. Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri Uygulama Yönetmeliği
+1501 1.2.7. İhtisas OSB’ler
+1509 1.2.8. Tarıma Dayalı İhtisas Organize Sanayi Bölgeleri
+1547 1.2.9. Jeotermal Seracılık ile İlgili Mevzuat
+1570 1.3. Projenin Diğer Kurumların Projeleri İle İlişkisi
+1576 1.3.1. Proje İle Eşzamanlı Götürülmesi Gereken Diğer Kurumların Projeleri
+1584 1.3.2. Projede Başka Kurumların Projeleri ile Fiziki Çakışma Oluşmamasına Yönelik
+1664 06.08.2015 tarih  ve  53276502-305.02-E.13185  sayılı yazısına istinaden Balıkesir Büyükşehir
+1726 8.21. ORGANİZE TARIM VE HAYVANCILIK ALANLARI
+1727 8.21.1 Bu alanlar içerisinde; tarımsal amaçlı yapılar ile hububat, meyve ve
+1739 8.21.2 Bu alandaki yapılanma koşulları alt ölçekli planlarda belirlenecektir. Bu
+1749 8.21.3 Bu alanlarda çevre kirliliğini önlemek için her türde atığa ilişkin teknik
+1752 8.21.4    Bu    alanlarda    yer    alabilecek    sera    bölgelerine    yönelik    olarak
+1915 18.10.2023 tarih, 4307172 sayılı yazısında;
+1968 21.11.2022 tarihinde Genel Müdürlükçe faaliyet sahasında yapılan incelemelerde; söz konusu
+1975 02.06.2023 tarih, 13490 sayılı yazısında
+1982 09.10.2023 tarih, 5129244 /10 sayılı yazısında
+2001 01.08.2023 tarih, 220997920 sayılı yazısında;
+2074 17.02.2011 tarih ve 6359 sayılı "Çevre ve Toplum Sağlığını Olumsuz Etkileyebilecek
+2129 07.12.2022 tarih, 2949854 sayılı yazısında;
+2157 30.04.2012  tarih  ve  2012/1  nolu  Valilik  kararı  hükümlerine  uyulması  gerekmektedir.
+2158 17.03.2010 ve 1987 sayılı Acil ve Afet Durum Yönetimi Başkanlığı yazısında; "Derelerin
+2273 18.10.2023 tarih, 9564 sayılı yazısında;
+2283 1.4. Proje İle İlgili Geçmişte Yapılmış Etüt Araştırma ve Diğer Çalışmalar
+2289 1.4.1. Proje Fikrinin Ortaya Çıkışı
+2324 1.5. Proje İhtiyacı/Talebi
+2380 1.6. Proje Alternatifleri
+2381 1.6.1. Projesiz Durum
+2391 1.6.2. Bakım Onarım veya Tevsii Yatırımı
+2396 1.6.3. En İyi İkinci Alternatif
+2400 1.6.4. En İyi Alternatif (Tercih edilen alternatif)
+2406 2.322.419.42 m2’lik bir alan üzerinde kurulmuştur.
+2408 1.7. Teknoloji ve Tasarım
+2426 10.000 m2 olacak şekilde planlanmıştır.
+2456 1.7.1. Seralarda Kullanım Koşulları
+2535 1.8.2. Polikarbon Gotik Tip Sera Özellikleri
+2646 1.5m’dir. Havalandırma 1.6 m uzunluğunda 2.5 mm kalınlığında dişli çubuklar tarafından ve
+2859 2. YER SEÇİMİ VE ARAZİ MALİYETİ
+2871 2.1. Fiziksel ve Coğrafi Özellikler
+3211 2.2. Ekonomik ve Fiziksel Altyapı
+3225 2.3.5. Bölgenin Tarımsal Ürünlere Ait Üretim Miktarları
+3392 2.3.4. Bölgenin Sanayi Altyapısının Durumu
+3433 2.3. Sosyal Altyapı ve Sosyal Etkiler
+3452 2.3.1. Bölgenin SEGE Sıralamasına Göre Değerlendirilmesi
+3515 2.3.2. TR22 Bölgesi İşgücü Göstergeleri
+3541 2.4. Çevresel Etkiler
+3546 2.5. Alternatifler, Yer Seçimi ve Arazi Maliyeti (Kamulaştırma Bedeli de Dahil)
+3576 3.1. Varsayımlar
+3597 3.2. Talep Tahmin Yöntemi
+3627 3.3. Talep Analizi
+3859 3.4. Talep Tahmin Sonuçları
+3882 3.5. Kapasite Seçimi
+4042 169.302,68 m² (%7,29) Güneş Enerjisi Santrallerinden oluşmaktadır.
+4238 4.1 Sabit Sermaye Yatırım Tutarı
+4865 4.2. İşletme Sermayesi
+4871 4.2.1. İnsan Gücü İhtiyaci ve Tahmini Giderler
+4914 4.2.2. Üretimin ve/veya Hizmetin Fiyatlandırılması
+4957 2322.47            5            348,370.26    4,180,443.16       4.70 ₺       1,637,340.24 ₺       19,648,082.83 ₺
+4984 2322.47            5            348,370.26    4,180,443.16       6.50 ₺       2,264,406.71 ₺       27,172,880.51 ₺
+5013 720.25                   10                    216,076           1.00 ₺       216,075.92 ₺       2,592,911.02 ₺
+5016 123.83                   10                     37,150            1.00 ₺        37,149.55 ₺          445,794.59 ₺
+5039 720.25                  10                    216,076            5.00 ₺      1,080,379.59 ₺     12,964,555.08 ₺
+5042 123.83                  10                     37,150             5.00 ₺        185,747.75 ₺       2,228,972.94 ₺
+5059 720.25                100000                      72,025.31                 0.300000 ₺
+5077 720.25                100000                      72,025.31                 0.750000 ₺
+5100 4.3. Toplam Yatırım Tutarı ve Yıllara Dağılımı
+5126 5.00 ₺                          6.25 ₺                         7.81 ₺                       9.77 ₺                      12.21 ₺                     15.26 ₺                     19.07 ₺                     23.84 ₺                     29.80 ₺                     37.25 ₺
+5136 6.50 ₺                          8.13 ₺                        10.16 ₺                     12.70 ₺                     15.87 ₺                     19.84 ₺                     24.80 ₺                     30.99 ₺                     38.74 ₺                     48.43 ₺
+5152 200.00 ₺                      250.00 ₺                     312.50 ₺                   390.63 ₺                   488.28 ₺                   610.35 ₺                   762.94 ₺                   953.67 ₺                  1,192.09 ₺                1,490.12 ₺
+5161 0.50 ₺                          0.63 ₺                         0.78 ₺                       0.98 ₺                       1.22 ₺                       1.53 ₺                       1.91 ₺                       2.38 ₺                       2.98 ₺                       3.73 ₺
+5220 4.70 ₺                       5.88 ₺                      7.34 ₺                      9.18 ₺                      11.47 ₺                      14.34 ₺                      17.93 ₺                      22.41 ₺                      28.01 ₺                      35.02 ₺
+5236 1519352.802            2279029.203           3038705.604           3038705.604            3038705.604             3038705.604             3038705.604             3038705.604             3038705.604             3038705.604
+5238 1.00 ₺                       1.25 ₺                      1.56 ₺                      1.95 ₺                       2.44 ₺                        3.05 ₺                        3.81 ₺                        4.77 ₺                        5.96 ₺                        7.45 ₺
+5245 50.00 ₺                     62.50 ₺                    78.13 ₺                    97.66 ₺                    122.07 ₺                    152.59 ₺                    190.73 ₺                    238.42 ₺                    298.02 ₺                    372.53 ₺
+5262 0.20 ₺                       0.25 ₺                      0.31 ₺                      0.39 ₺                       0.49 ₺                        0.61 ₺                        0.76 ₺                        0.95 ₺                        1.19 ₺                        1.49 ₺
+5344 5.1. Finansman Öngörüsü
+5351 5.2. Finansman İhtiyacı ve Kaynakları
+5365 5.3. Finansman Koşulları ve Sermaye Maliyeti
+5385 6. TİCARİ ANALİZ
+5387 6.1. Ticari Analiz ile İlgili Temel Varsayımlar
+5404 6.2. Ticari Faydalar ve Maliyetler
+5408 6.3. Ticari Nakit Akış Tablosu
+5472 6.4. Ticari Fayda Maliyet Analizi
+5644 7.1. Ekonomik Faydalar ve Maliyetler
+5683 7.2. Ekonomik Fayda Maliyet Analizi
+5699 7.3. Maliyet Etkinlik Analizi
+5726 8.1. Duyarlılık Analizi
+5741 8.2. Proje İle İlgili Riskler ve Etkiler
+5754 8.3. Temel Risklerle İlgili Risk Azaltma Tedbirleri
+5765 9.1. Çevresel Etkilerin Ön Değerlendirmesi
+5770 9.2. Çevresel Riskler ve Azaltma Tedbirleri
+5810 10.1. Projenin Sosyal Etkileri
+5839 10.2. Projenin Toplumsal Gruplara Etkisi
+5851 10.3. Bölgesel Düzeydeki Etkisi
+5898 11.1. Proje Yürütücüsü Kuruluş ve Teknik Kapasitesi
+5903 11.2. Proje Organizasyonu ve Yönetim
+5936 11.3. Proje Uygulama Planı ve Projede Kritik Aşamalar
+5979 12.1. Projenin Ticari ve Ekonomik Yapılabilirliği İle İlgili Sonuçlar
+6008 12.2. Projenin Sürdürülebilirliği
+6023 12.3. Projeye İlişkin Temel Riskler

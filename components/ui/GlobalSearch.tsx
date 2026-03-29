@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   Search, X, LayoutDashboard, FileText, Clock,
   Package, Users, Settings, ArrowRight, UserCheck, Hash,
-  FolderKanban, Palette, Activity, Shuffle, SlidersHorizontal
+  FolderKanban, Palette, Activity, Shuffle, SlidersHorizontal, Layers
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -34,6 +34,7 @@ const PAGES: SearchItem[] = [
   { id: "page-sistem-tanimlamalar", title: "Sistem Tanımlamaları", subtitle: "Sistem alt tanımlamaları", category: "Modül", href: "/tanimlamalar", icon: SlidersHorizontal, iconColor: "text-slate-600 dark:text-slate-400", iconBg: "bg-slate-100 dark:bg-slate-800", keywords: ["sistem", "tanımlamalar", "ayarlar"] },
   { id: "page-sistem-rol-yetki", title: "Rol-Yetki", subtitle: "Sistem › Tanımlamalar › Rol ve Yetki", category: "Sayfa", href: "/tanimlamalar/rol-yetki", icon: UserCheck, iconColor: "text-slate-600 dark:text-slate-400", iconBg: "bg-slate-100 dark:bg-slate-800", keywords: ["rol", "yetki", "izin"] },
   { id: "page-sistem-kullanici", title: "Kullanıcı Tanımları", subtitle: "Sistem › Tanımlamalar › Kullanıcı", category: "Sayfa", href: "/tanimlamalar/kullanici", icon: Users, iconColor: "text-slate-600 dark:text-slate-400", iconBg: "bg-slate-100 dark:bg-slate-800", keywords: ["kullanıcı", "user", "hesap"] },
+  { id: "page-sistem-ortak-organizasyon", title: "Organizasyon Tanımları", subtitle: "Sistem › Tanımlamalar › Organizasyon", category: "Sayfa", href: "/tanimlamalar/organizasyon", icon: Layers, iconColor: "text-slate-600 dark:text-slate-400", iconBg: "bg-slate-100 dark:bg-slate-800", keywords: ["departman", "şube", "organizasyon", "lokasyon"] },
 ];
 
 const PERSONNEL: SearchItem[] = [

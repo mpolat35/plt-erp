@@ -17,9 +17,6 @@ import { Modal } from "@/components/ui/Modal";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Textarea } from "@/components/ui/Textarea";
-import { Card, CardHeader, CardBody } from "@/components/ui/Card";
-import { Alert } from "@/components/ui/Alert";
-import { StatCard } from "@/components/ui/StatCard";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface EventField {
@@ -152,6 +149,16 @@ const LEVEL_LABEL: Record<number, string> = { 1: "Bilgilendirme", 2: "İhtar", 3
 
 let nextId = 100;
 const uid = (p: string) => `${p}${++nextId}`;
+
+
+const STORAGE_KEY = "bildirim-ayarlari-state-v1";
+
+const normalizeEscalations = (items: Escalation[]) =>
+  items.map((esc, index) => ({ ...esc, level: index + 1 }));
+
+const renderTemplatePreview = (input: string, values: Record<string, string>) =>
+  input.replace(/\{\{[^}]+\}\}/g, (token) => values[token] ?? token);
+
 
 // ── Koşul Oluşturucu ──────────────────────────────────────────────────────────
 function ConditionBuilder({ conditions, onChange, eventId }: {
@@ -575,14 +582,30 @@ function RuleForm({ initial, templates, title = "Yeni Kural", onSave, onCancel }
     setRule({ ...rule, escalations: rule.escalations.map(e => e.level === level ? updated : e) });
 
   const deleteEsc = (level: number) =>
-    setRule({ ...rule, escalations: rule.escalations.filter(e => e.level !== level) });
+    setRule({ ...rule, escalations: normalizeEscalations(rule.escalations.filter(e => e.level !== level)) });
 
   const addLevel = () => {
     const nextLevel = rule.escalations.length + 1;
-    setRule({ ...rule, escalations: [...rule.escalations, { ...defaultEsc, level: nextLevel, label: `Seviye ${nextLevel}` }] });
+    setRule({ ...rule, escalations: normalizeEscalations([...rule.escalations, { ...defaultEsc, level: nextLevel, label: `Seviye ${nextLevel}` }]) });
   };
 
-  const canSave = rule.name.trim() && rule.eventType;
+  const validationErrors = [
+    ...(!rule.name.trim() ? ["Kural adı zorunludur."] : []),
+    ...(!rule.eventType ? ["Tetikleyen olay seçilmelidir."] : []),
+    ...(rule.sendWindow.start >= rule.sendWindow.end ? ["Gönderim penceresi başlangıcı bitişten küçük olmalıdır."] : []),
+    ...rule.escalations.flatMap((esc, index) => {
+      const errors: string[] = [];
+      if (!esc.label.trim()) errors.push(`Seviye ${index + 1}: kademe adı zorunludur.`);
+      if (esc.channels.length === 0) errors.push(`Seviye ${index + 1}: en az bir kanal seçilmelidir.`);
+      esc.channels.forEach(ch => {
+        if (!esc.channelTemplates?.[ch]) {
+          errors.push(`Seviye ${index + 1}: ${CHANNEL_META[ch]?.label || ch} için şablon seçilmelidir.`);
+        }
+      });
+      return errors;
+    }),
+  ];
+  const canSave = validationErrors.length === 0;
 
   return (
     <div className="border border-blue-200 dark:border-blue-800 rounded-xl overflow-hidden">
@@ -707,10 +730,19 @@ function RuleForm({ initial, templates, title = "Yeni Kural", onSave, onCancel }
           </Button>
         </div>
 
+        {validationErrors.length > 0 && (
+          <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300">
+            <div className="font-semibold mb-1">Kaydetmeden önce düzelt:</div>
+            <ul className="list-disc pl-5 space-y-0.5">
+              {validationErrors.map(err => <li key={err}>{err}</li>)}
+            </ul>
+          </div>
+        )}
+
         <div className="flex items-center gap-2">
-          <Button onClick={() => canSave && onSave(rule)} disabled={!canSave}>Kaydet</Button>
+          <Button onClick={() => canSave && onSave({ ...rule, escalations: normalizeEscalations(rule.escalations) })} disabled={!canSave}>Kaydet</Button>
           <Button variant="outline" onClick={onCancel}>İptal</Button>
-          {!canSave && <span className="text-xs text-slate-400">Kural adı ve tetikleyen olay zorunludur.</span>}
+          {!canSave && <span className="text-xs text-slate-400">Eksik alanlar tamamlanmadan kayıt yapılamaz.</span>}
         </div>
       </div>
     </div>
@@ -779,8 +811,8 @@ function RuleCard({ rule, templates, onUpdate, onDelete, expanded, onToggleExpan
             {rule.escalations.map((esc, i) => (
               <EscalationRow key={esc.level} esc={esc} isLast={i === rule.escalations.length - 1}
                 templates={templates} eventId={rule.eventType}
-                onUpdate={updated => onUpdate({ ...rule, escalations: rule.escalations.map(e => e.level === esc.level ? updated : e) })}
-                onDelete={() => onUpdate({ ...rule, escalations: rule.escalations.filter(e => e.level !== esc.level) })} />
+                onUpdate={updated => onUpdate({ ...rule, escalations: normalizeEscalations(rule.escalations.map(e => e.level === esc.level ? updated : e)) })}
+                onDelete={() => onUpdate({ ...rule, escalations: normalizeEscalations(rule.escalations.filter(e => e.level !== esc.level)) })} />
             ))}
           </div>
           <Button
@@ -788,7 +820,7 @@ function RuleCard({ rule, templates, onUpdate, onDelete, expanded, onToggleExpan
             iconLeft={<Plus className="w-4 h-4" />}
             onClick={() => {
               const nextLevel = rule.escalations.length + 1;
-              onUpdate({ ...rule, escalations: [...rule.escalations, { level: nextLevel, label: `Seviye ${nextLevel}`, delayAmount: 1, delayUnit: "days", delayFrom: "event", conditions: [], channels: ["email"], channelTemplates: {}, retry: { enabled: false, count: 1, intervalHours: 24 } }] });
+              onUpdate({ ...rule, escalations: normalizeEscalations([...rule.escalations, { level: nextLevel, label: `Seviye ${nextLevel}`, delayAmount: 1, delayUnit: "days", delayFrom: "event", conditions: [], channels: ["email"], channelTemplates: {}, retry: { enabled: false, count: 1, intervalHours: 24 } }]) });
             }}
             className="mt-4 w-full border-dashed border-slate-300 dark:border-slate-700 h-10"
           >
@@ -1146,7 +1178,7 @@ function OlayKatalogTab() {
                     <IconButton variant="delete" icon={<Trash2 className="w-4 h-4" />} onClick={() => deleteEvent(e.id)} title="Sil" />
                   </IconButtonRow>
                 </div>
-                <code className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:blue-400 px-2.5 py-1 rounded-md font-mono border border-blue-100 dark:border-blue-800/50">{e.id}</code>
+                <code className="text-xs bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-md font-mono border border-blue-100 dark:border-blue-800/50">{e.id}</code>
                 <p className="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{e.description}</p>
               </div>
             </div>
@@ -1294,6 +1326,22 @@ function SablonlarTab({ templates, setTemplates }: { templates: Template[]; setT
   const tpl = templates.find(t => t.id === selected);
   const [draft, setDraft] = useState<Template>(tpl ?? templates[0]);
 
+  useEffect(() => {
+    if (tpl) setDraft(tpl);
+  }, [tpl]);
+
+  const previewValues: Record<string, string> = {
+    "{{musteri_adi}}": "Ayşe Demir",
+    "{{tutar}}": "1.250",
+    "{{son_odeme_tarihi}}": "31.03.2026",
+    "{{gecikme_gun}}": "5",
+    "{{sozlesme_adi}}": "Kurumsal Hizmet Sözleşmesi",
+    "{{bitis_tarihi}}": "15.04.2026",
+    "{{kalan_gun}}": "7",
+    "{{siparis_no}}": "#SP-2026-1042",
+    "{{yeni_durum}}": "Kargoya Verildi",
+  };
+
   const selectTemplate = (id: string) => {
     const t = templates.find(t => t.id === id);
     if (!t) return;
@@ -1301,6 +1349,15 @@ function SablonlarTab({ templates, setTemplates }: { templates: Template[]; setT
   };
 
   const save = () => { setTemplates(templates.map(t => t.id === draft.id ? draft : t)); setEditing(false); };
+
+  const deleteTemplate = (id: string) => {
+    const remaining = templates.filter(t => t.id !== id);
+    if (remaining.length === 0) return;
+    setTemplates(remaining);
+    setSelected(remaining[0].id);
+    setDraft(remaining[0]);
+    setEditing(false);
+  };
 
   const addTemplate = () => {
     const id = uid("t");
@@ -1397,6 +1454,18 @@ function SablonlarTab({ templates, setTemplates }: { templates: Template[]; setT
             </div>
           </div>
 
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 dark:border-emerald-900 dark:bg-emerald-950/20">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 mb-2">Canlı Önizleme</p>
+            {draft.channel === "email" && (
+              <div className="mb-2 rounded-lg border border-emerald-100 bg-white px-3 py-2 text-sm font-medium text-slate-700 dark:border-emerald-900 dark:bg-slate-900 dark:text-slate-200">
+                Konu: {renderTemplatePreview(draft.subject || "—", previewValues)}
+              </div>
+            )}
+            <div className="whitespace-pre-wrap rounded-lg border border-emerald-100 bg-white px-3 py-3 text-sm leading-relaxed text-slate-700 dark:border-emerald-900 dark:bg-slate-900 dark:text-slate-200">
+              {renderTemplatePreview(draft.body || "Şablon içeriği yok.", previewValues)}
+            </div>
+          </div>
+
           <div className="flex gap-2 pt-2">
             {editing ? (
               <>
@@ -1404,7 +1473,12 @@ function SablonlarTab({ templates, setTemplates }: { templates: Template[]; setT
                 <Button variant="outline" onClick={() => { if (tpl) setDraft(tpl); setEditing(false); }}>İptal</Button>
               </>
             ) : (
-              <Button onClick={() => setEditing(true)} iconLeft={<Edit2 className="w-3.5 h-3.5" />}>Şablonu Düzenle</Button>
+              <>
+                <Button onClick={() => setEditing(true)} iconLeft={<Edit2 className="w-3.5 h-3.5" />}>Şablonu Düzenle</Button>
+                {templates.length > 1 && (
+                  <Button variant="outline" onClick={() => deleteTemplate(draft.id)} iconLeft={<Trash2 className="w-3.5 h-3.5" />}>Şablonu Sil</Button>
+                )}
+              </>
             )}
           </div>
         </div>
@@ -1434,18 +1508,18 @@ function SablonlarTab({ templates, setTemplates }: { templates: Template[]; setT
 }
 
 // ── TAB: Log ─────────────────────────────────────────────────────────────────
-function LogTab() {
+function LogTab({ logs }: { logs: LogEntry[] }) {
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
 
   const stats = {
-    total:     SEED_LOGS.length,
-    delivered: SEED_LOGS.filter(l => l.status === "delivered").length,
-    failed:    SEED_LOGS.filter(l => l.status === "failed").length,
-    pending:   SEED_LOGS.filter(l => l.status === "pending").length,
+    total:     logs.length,
+    delivered: logs.filter(l => l.status === "delivered").length,
+    failed:    logs.filter(l => l.status === "failed").length,
+    pending:   logs.filter(l => l.status === "pending").length,
   };
 
-  const filtered = SEED_LOGS.filter(l =>
+  const filtered = logs.filter(l =>
     (filter === "all" || l.status === filter) &&
     (!search || l.recipient.toLowerCase().includes(search.toLowerCase()) || l.rule.toLowerCase().includes(search.toLowerCase()))
   );
@@ -1628,8 +1702,55 @@ export default function BildirimAyarlari() {
   const [catalog, setCatalog] = useState<EventGroup[]>(EVENT_CATALOG);
   const [templates, setTemplates] = useState<Template[]>(SEED_TEMPLATES);
   const [rules, setRules]         = useState<Rule[]>(SEED_RULES);
+  const [logs, setLogs]           = useState<LogEntry[]>(SEED_LOGS);
   const [prefs, setPrefs]         = useState<Pref[]>(SEED_PREFS);
   const [activeTab, setActiveTab] = useState("kurallar");
+  const [hydrated, setHydrated]   = useState(false);
+
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        setHydrated(true);
+        return;
+      }
+      const parsed = JSON.parse(raw);
+      if (parsed.catalog) setCatalog(parsed.catalog);
+      if (parsed.templates) setTemplates(parsed.templates);
+      if (parsed.rules) setRules(parsed.rules);
+      if (parsed.logs) setLogs(parsed.logs);
+      if (parsed.prefs) setPrefs(parsed.prefs);
+    } catch (error) {
+      console.error("Bildirim ayarları yüklenemedi", error);
+    } finally {
+      setHydrated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) return;
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, templates, rules, logs, prefs }));
+  }, [catalog, templates, rules, logs, prefs, hydrated]);
+
+  const exportSettings = () => {
+    const payload = JSON.stringify({ catalog, templates, rules, logs, prefs }, null, 2);
+    const blob = new Blob([payload], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "bildirim-ayarlari.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const resetAll = () => {
+    setCatalog(EVENT_CATALOG);
+    setTemplates(SEED_TEMPLATES);
+    setRules(SEED_RULES);
+    setLogs(SEED_LOGS);
+    setPrefs(SEED_PREFS);
+    window.localStorage.removeItem(STORAGE_KEY);
+  };
 
   // content: boş string — Tabs bileşeni içerik alanı render etmesin
   const tabItems: TabItem[] = [
@@ -1642,13 +1763,24 @@ export default function BildirimAyarlari() {
 
   return (
     <CatalogContext.Provider value={{ catalog, setCatalog }}>
-      <div>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 dark:border-slate-800 dark:bg-slate-900/50">
+          <div>
+            <div className="text-sm font-semibold text-slate-800 dark:text-slate-200">Bildirim Modülü</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Kurallar, olay kataloğu, şablonlar, loglar ve alıcı tercihleri tek ekranda yönetilir.</div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={exportSettings}>Dışa Aktar</Button>
+            <Button variant="outline" size="sm" onClick={resetAll}>Varsayılanlara Dön</Button>
+          </div>
+        </div>
+
         <Tabs items={tabItems} variant="filled" activeKey={activeTab} onChange={setActiveTab} />
         <div className="pt-2">
           <div className={activeTab !== "kurallar"  ? "hidden" : ""}><KurallarTab templates={templates} rules={rules} setRules={setRules} /></div>
           <div className={activeTab !== "olaylar"   ? "hidden" : ""}><OlayKatalogTab /></div>
           <div className={activeTab !== "sablonlar" ? "hidden" : ""}><SablonlarTab templates={templates} setTemplates={setTemplates} /></div>
-          <div className={activeTab !== "log"       ? "hidden" : ""}><LogTab /></div>
+          <div className={activeTab !== "log"       ? "hidden" : ""}><LogTab logs={logs} /></div>
           <div className={activeTab !== "tercihler" ? "hidden" : ""}><AliciTercihleriTab prefs={prefs} setPrefs={setPrefs} /></div>
         </div>
       </div>

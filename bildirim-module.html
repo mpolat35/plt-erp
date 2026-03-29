@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bildirim Modülü Bilgileri</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #1f2937; margin: 24px; background: #f7f9fb; }
+    h1, h2, h3 { color: #0f172a; }
+    h1 { border-bottom: 3px solid #2563eb; padding-bottom: 8px; }
+    section { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 10px 12px; border: 1px solid #d1d5db; text-align: left; vertical-align: top; }
+    th { background: #eef2ff; }
+    .code { font-family: Menlo, Monaco, Consolas, monospace; background: #f8fafc; padding: 2px 5px; border-radius: 4px; }
+    .tag { color: #2563eb; }
+    .badge { display: inline-block; margin: 2px 4px 2px 0; padding: 4px 8px; background: #e0f2fe; color: #0369a1; border-radius: 9999px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Bildirim Modülü Bilgileri</h1>
+  <p>Bu HTML, <span class="code">components/bildirim/BildirimAyarlari.tsx</span> içindeki sabit yapılandırmaları tek bir yerde birleştirir.</p>
+
+  <section>
+    <h2>Olay Kataloğu</h2>
+    <p>Modülde tanımlanmış olay grupları ve event'ler:</p>
+
+    <h3>Ödeme</h3>
+    <table>
+      <thead><tr><th>Event ID</th><th>Başlık</th><th>Açıklama</th><th>İptal Olanlar</th><th>Alanlar</th></tr></thead>
+      <tbody>
+        <tr><td class="code">payment.overdue</td><td>Ödeme Gecikmesi</td><td>Fatura/ödeme vadesi geçtiğinde tetiklenir</td><td><span class="badge">payment.completed</span>, <span class="badge">payment.cancelled</span></td><td>payment_status, overdue_days, amount, invoice_type, customer_segment</td></tr>
+        <tr><td class="code">payment.completed</td><td>Ödeme Tamamlandı</td><td>Başarılı ödeme yapıldığında tetiklenir</td><td>—</td><td>payment_method, amount</td></tr>
+        <tr><td class="code">payment.failed</td><td>Ödeme Başarısız</td><td>Ödeme işlemi başarısız olduğunda</td><td><span class="badge">payment.completed</span></td><td>failure_reason, attempt_count, amount</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sözleşme</h3>
+    <table>
+      <thead><tr><th>Event ID</th><th>Başlık</th><th>Açıklama</th><th>İptal Olanlar</th><th>Alanlar</th></tr></thead>
+      <tbody>
+        <tr><td class="code">contract.expiring</td><td>Sözleşme Sona Eriyor</td><td>Sözleşme bitiş tarihine yaklaşıldığında</td><td><span class="badge">contract.renewed</span>, <span class="badge">contract.cancelled</span></td><td>contract_status, days_remaining, contract_type, auto_renewal</td></tr>
+        <tr><td class="code">contract.renewed</td><td>Sözleşme Yenilendi</td><td>Sözleşme başarıyla yenilendiğinde</td><td>—</td><td>new_end_date, contract_type</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sipariş</h3>
+    <table>
+      <thead><tr><th>Event ID</th><th>Başlık</th><th>Açıklama</th><th>İptal Olanlar</th><th>Alanlar</th></tr></thead>
+      <tbody>
+        <tr><td class="code">order.status_changed</td><td>Sipariş Durumu Değişti</td><td>Sipariş durumu güncellendiğinde anlık bildirim</td><td>—</td><td>order_status, carrier, order_value</td></tr>
+        <tr><td class="code">order.delivery_failed</td><td>Teslimat Başarısız</td><td>Kargo teslim edilemediğinde</td><td><span class="badge">order.status_changed</span></td><td>attempt_count, failure_reason</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Kullanıcı</h3>
+    <table>
+      <thead><tr><th>Event ID</th><th>Başlık</th><th>Açıklama</th><th>İptal Olanlar</th><th>Alanlar</th></tr></thead>
+      <tbody>
+        <tr><td class="code">user.inactive</td><td>Kullanıcı Hareketsiz</td><td>Belirli süredir giriş yapılmamışsa</td><td><span class="badge">user.login</span></td><td>inactive_days, account_type, last_action</td></tr>
+        <tr><td class="code">user.subscription_expiring</td><td>Abonelik Sona Eriyor</td><td>Kullanıcı aboneliği bitiş tarihine yaklaşıyor</td><td><span class="badge">user.subscription_renewed</span></td><td>plan_name, days_remaining, billing_cycle</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Bildirim Kuralları (Rules)</h2>
+    <p>Modülde hazırlanan örnek bildirim kuralları:</p>
+    <table>
+      <thead><tr><th>Rule ID</th><th>Ad</th><th>Event Tipi</th><th>İptal Et</th><th>Öncelik</th><th>Gönderim Saati</th><th>Aktif</th></tr></thead>
+      <tbody>
+        <tr><td class="code">r1</td><td>Fatura Ödeme Gecikmesi</td><td class="code">payment.overdue</td><td class="code">payment.completed</td><td>1</td><td>08:00 - 21:00</td><td>Evet</td></tr>
+        <tr><td class="code">r2</td><td>Sözleşme Yenileme</td><td class="code">contract.expiring</td><td class="code">contract.renewed</td><td>2</td><td>09:00 - 18:00</td><td>Evet</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Escalation Yapıları</h3>
+    <article>
+      <h4>r1 — Fatura Ödeme Gecikmesi</h4>
+      <ul>
+        <li><strong>Level 1:</strong> Bilgilendirme, 1 gün sonra, event bazlı, email+sms, retry: 2 deneme, 4 saat aralıklı</li>
+        <li><strong>Level 2:</strong> İhtar, 7 gün sonra, event bazlı, email+sms, koşullar: overdue_days >= 7, retry: 3 deneme, 6 saat aralıklı</li>
+        <li><strong>Level 3:</strong> Kesme Bildirimi, 14 gün sonra, event bazlı, email+sms+push, retry kapalı</li>
+      </ul>
+    </article>
+    <article>
+      <h4>r2 — Sözleşme Yenileme</h4>
+      <ul>
+        <li><strong>Level 1:</strong> Hatırlatma, 30 gün sonra, event bazlı, email, retry: 1 deneme, 48 saat aralıklı</li>
+        <li><strong>Level 2:</strong> Son Uyarı, 7 gün sonra, event bazlı, email+sms, koşullar: days_remaining <= 7, retry: 2 deneme, 24 saat aralıklı</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>Şablonlar (Templates)</h2>
+    <table>
+      <thead><tr><th>ID</th><th>İsim</th><th>Kanal</th><th>Konu</th><th>Gövde</th></tr></thead>
+      <tbody>
+        <tr><td class="code">t1</td><td>Fatura Hatırlatma</td><td>E-posta</td><td>Faturanızın ödeme tarihi yaklaşıyor</td><td>Sayın {{musteri_adi}}, {{tutar}} TL tutarındaki faturanızın son ödeme tarihi {{son_odeme_tarihi}} tarihidir.</td></tr>
+        <tr><td class="code">t2</td><td>Gecikme İhtar</td><td>E-posta</td><td>Önemli: Gecikmiş fatura bildirimi</td><td>Sayın {{musteri_adi}}, {{gecikme_gun}} gündür ödenmemiş {{tutar}} TL tutarındaki faturanız için resmi ihtar sürecimiz başlamıştır.</td></tr>
+        <tr><td class="code">t3</td><td>Fatura SMS</td><td>SMS</td><td>—</td><td>{{musteri_adi}}, {{tutar}} TL faturanız {{gecikme_gun}} gündür ödenmedi. 48 saat içinde ödeme yapılmazsa hizmetiniz durdurulacaktır.</td></tr>
+        <tr><td class="code">t4</td><td>Sözleşme Hatırlatma</td><td>E-posta</td><td>Sözleşmeniz {{kalan_gun}} gün içinde sona eriyor</td><td>Sayın {{musteri_adi}}, {{sozlesme_adi}} sözleşmeniz {{bitis_tarihi}} tarihinde sona ermektedir.</td></tr>
+        <tr><td class="code">t5</td><td>Son Yenileme Uyarısı</td><td>SMS</td><td>—</td><td>{{musteri_adi}}, {{sozlesme_adi}} sözleşmeniz {{kalan_gun}} gün içinde sona eriyor. Yenileme için arayın: 0850 XXX XX XX</td></tr>
+        <tr><td class="code">t6</td><td>Sipariş Güncelleme</td><td>Push</td><td>Siparişiniz güncellendi</td><td>{{siparis_no}} numaralı siparişiniz {{yeni_durum}} durumuna geçti.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Log Kayıtları</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Zaman</th><th>Alıcı</th><th>Kural</th><th>Seviye</th><th>Kanal</th><th>Durum</th></tr></thead>
+      <tbody>
+        <tr><td class="code">l1</td><td>2024-03-15 09:12</td><td>Ahmet Yılmaz</td><td>Fatura Ödeme Gecikmesi</td><td>1</td><td>E-posta</td><td>delivered</td></tr>
+        <tr><td class="code">l2</td><td>2024-03-15 09:12</td><td>Ahmet Yılmaz</td><td>Fatura Ödeme Gecikmesi</td><td>1</td><td>SMS</td><td>delivered</td></tr>
+        <tr><td class="code">l3</td><td>2024-03-14 14:30</td><td>Zeynep Kaya</td><td>Sözleşme Yenileme</td><td>1</td><td>E-posta</td><td>delivered</td></tr>
+        <tr><td class="code">l4</td><td>2024-03-14 10:05</td><td>Murat Demir</td><td>Fatura Ödeme Gecikmesi</td><td>2</td><td>E-posta</td><td>failed</td></tr>
+        <tr><td class="code">l5</td><td>2024-03-14 10:05</td><td>Murat Demir</td><td>Fatura Ödeme Gecikmesi</td><td>2</td><td>SMS</td><td>delivered</td></tr>
+        <tr><td class="code">l6</td><td>2024-03-13 08:00</td><td>Elif Şahin</td><td>Fatura Ödeme Gecikmesi</td><td>3</td><td>E-posta</td><td>delivered</td></tr>
+        <tr><td class="code">l7</td><td>2024-03-13 08:00</td><td>Elif Şahin</td><td>Fatura Ödeme Gecikmesi</td><td>3</td><td>SMS</td><td>delivered</td></tr>
+        <tr><td class="code">l8</td><td>2024-03-12 16:45</td><td>Can Öztürk</td><td>Sipariş Durumu</td><td>1</td><td>Push</td><td>delivered</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Kullanıcı Tercihleri</h2>
+    <table>
+      <thead><tr><th>ID</th><th>İsim</th><th>E-posta</th><th>SMS</th><th>Push</th><th>Opt-out</th></tr></thead>
+      <tbody>
+        <tr><td class="code">p1</td><td>Ahmet Yılmaz</td><td>Evet</td><td>Evet</td><td>Hayır</td><td>Hayır</td></tr>
+        <tr><td class="code">p2</td><td>Zeynep Kaya</td><td>Evet</td><td>Hayır</td><td>Evet</td><td>Hayır</td></tr>
+        <tr><td class="code">p3</td><td>Murat Demir</td><td>Hayır</td><td>Evet</td><td>Hayır</td><td>Hayır</td></tr>
+        <tr><td class="code">p4</td><td>Elif Şahin</td><td>Evet</td><td>Evet</td><td>Evet</td><td>Hayır</td></tr>
+        <tr><td class="code">p5</td><td>Can Öztürk</td><td>Evet</td><td>Hayır</td><td>Hayır</td><td>Evet</td></tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

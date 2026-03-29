@@ -14,6 +14,24 @@ import { Tabs, type TabItem } from "../ui/Tabs";
 import { Select } from "../ui/Select";
 import { INITIAL_NODES, TABLES } from "./fizibilite-data";
 import type { FizNode, TableDef } from "./fizibilite-data";
+import bigadicData from "./bigadic-fizibilite.json";
+
+interface ProjectEntry {
+  id: string;
+  name: string;
+}
+
+const isBigadicProject = (projectId: string): boolean => {
+  if (projectId === "bigadic") return true;
+  if (typeof window === "undefined") return false;
+  try {
+    const list = JSON.parse(localStorage.getItem("proje_liste_v1") || "[]");
+    if (!Array.isArray(list)) return false;
+    return list.some((item: ProjectEntry) => typeof item?.id === "string" && typeof item?.name === "string" && item.id === projectId && /bigadi[cç]/i.test(item.name));
+  } catch {
+    return false;
+  }
+};
 
 // ── Types ──────────────────────────────────────────────────────
 interface NodeMeta {
@@ -92,6 +110,15 @@ function flattenNodes(nodes: FizNode[]): FizNode[] {
   return res;
 }
 
+function sanitizeExportHtml(html: string): string {
+  return html
+    .replace(/-{2,}\s*Page(?:\s*\(\d+\)|\s*\d+)?\s*Break\s*-{2,}(?:<br\s*\/?>\s*\d+)?/gi, "")
+    .replace(/Page\s*Break/gi, "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function nodeMatchesSearch(n: FizNode, q: string): boolean {
   if (!q) return true;
   const ql = q.toLowerCase();
@@ -164,8 +191,27 @@ export default function FizibiliteEditor({ projectId }: { projectId: string }) {
 
   const [contents, setContents] = useState<Contents>(() => {
     if (typeof window === "undefined") return {};
-    try { const s = localStorage.getItem(`${sk}_c`); return s ? JSON.parse(s) : {}; }
-    catch { return {}; }
+    try {
+      const s = localStorage.getItem(`${sk}_c`);
+      if (s) return JSON.parse(s);
+      if (isBigadicProject(projectId)) {
+        const imported = deepClone(bigadicData.contents as Contents);
+        Object.entries(imported).forEach(([key, value]) => {
+          if (!Array.isArray(value) && value?.html) value.html = sanitizeExportHtml(value.html);
+        });
+        return imported;
+      }
+      return {};
+    } catch {
+      if (isBigadicProject(projectId)) {
+        const imported = deepClone(bigadicData.contents as Contents);
+        Object.entries(imported).forEach(([key, value]) => {
+          if (!Array.isArray(value) && value?.html) value.html = sanitizeExportHtml(value.html);
+        });
+        return imported;
+      }
+      return {};
+    }
   });
 
   const [openNodes, setOpenNodes] = useState<Set<string>>(() => {
@@ -239,6 +285,12 @@ export default function FizibiliteEditor({ projectId }: { projectId: string }) {
       rteRef.current.innerHTML = getNodeContent(activeId).html || "";
     }
   }, [activeId, activeTab]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (activeId || !nodes.length) return;
+    const firstNodeId = nodes[0]?.children?.[0]?.id || nodes[0]?.id;
+    if (firstNodeId) setActiveId(firstNodeId);
+  }, [activeId, nodes]);
 
 
   // Focus rename input
@@ -376,15 +428,15 @@ export default function FizibiliteEditor({ projectId }: { projectId: string }) {
     const flatNodes = flattenNodes(nodes);
     let html = `
       <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #333; padding: 20px; max-width: 800px; margin: 0 auto; }
-        h1 { color: #111; text-align: center; margin-bottom: 24px; font-size: 22px; border-bottom: 2px solid #eee; padding-bottom: 8px; font-weight: 700; }
-        h2 { color: #1a1b26; margin-top: 24px; margin-bottom: 12px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 4px; font-weight: 600; }
-        h3 { color: #1a1b26; margin-top: 18px; margin-bottom: 8px; font-size: 14px; font-weight: 600; }
-        h4, h5, h6 { color: #333; margin-top: 14px; margin-bottom: 6px; font-size: 12px; font-weight: 600; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1.8; color: #333; padding: 20px; max-width: 900px; margin: 0 auto; text-align: justify; text-justify: inter-word; }
+        h1 { color: #111; text-align: center; margin-bottom: 24px; font-size: 28px; border-bottom: 2px solid #eee; padding-bottom: 8px; font-weight: 700; }
+        h2 { color: #1a1b26; margin-top: 24px; margin-bottom: 12px; font-size: 22px; border-bottom: 1px solid #eee; padding-bottom: 4px; font-weight: 600; }
+        h3 { color: #1a1b26; margin-top: 18px; margin-bottom: 10px; font-size: 18px; font-weight: 600; }
+        h4, h5, h6 { color: #333; margin-top: 14px; margin-bottom: 8px; font-size: 15px; font-weight: 600; }
         .meta { font-size: 12px; color: #555; background: #f8fafc; padding: 10px 15px; border-left: 3px solid #6366f1; margin-bottom: 20px; border-radius: 0 4px 4px 0; }
         .meta div { margin-bottom: 4px; }
         .meta div:last-child { margin-bottom: 0; }
-        .content { margin-bottom: 30px; }
+        .content { margin-bottom: 30px; text-align: justify; text-justify: inter-word; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
         th, td { border: 1px solid #e2e8f0; padding: 10px; text-align: left; }
         th { background-color: #f1f5f9; font-weight: 600; }
@@ -412,7 +464,8 @@ export default function FizibiliteEditor({ projectId }: { projectId: string }) {
         }
         
         if (content.html && content.html.trim() !== '<p><br></p>') {
-          html += `<div class="content">${content.html}</div>`;
+          const cleaned = sanitizeExportHtml(content.html);
+          if (cleaned) html += `<div class="content">${cleaned}</div>`;
         }
         
         if (content.form && Object.keys(content.form).length > 0) {

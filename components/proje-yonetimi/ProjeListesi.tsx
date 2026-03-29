@@ -32,13 +32,59 @@ const EMPTY_FORM: Omit<Project, "id"> = {
   name: "", idare: "", startDate: "", endDate: "", status: "aktif",
 };
 
+const DEFAULT_PROJECTS: Project[] = [
+  {
+    id: "bigadic",
+    name: "Balıkesir Bigadiç Jeotermal Kaynaklı Sera TDİOSB Fizibilite Raporu",
+    idare: "Balıkesir Valiliği Yatırım İzleme ve Koordinasyon Başkanlığı",
+    startDate: "2025-01-01",
+    endDate: "2025-12-31",
+    status: "aktif",
+  },
+];
+
 const SK = "proje_liste_v1";
+
+function isBigadicProject(value: unknown): boolean {
+  if (!value || typeof value !== "object") return false;
+  const item = value as { id?: unknown; name?: unknown };
+  const hasId = typeof item.id === "string" && item.id === "bigadic";
+  const hasName = typeof item.name === "string" && /bigadi[cç]/i.test(item.name);
+  return hasId || hasName;
+}
+
+function normalizeProjects(projects: unknown[]): Project[] {
+  const filtered = projects.filter((item) => !isBigadicProject(item));
+  return [DEFAULT_PROJECTS[0], ...filtered as Project[]];
+}
 
 function loadProjects(): Project[] {
   try {
     const s = localStorage.getItem(SK);
-    return s ? JSON.parse(s) : [];
-  } catch { return []; }
+    if (!s) {
+      saveProjects(DEFAULT_PROJECTS);
+      return DEFAULT_PROJECTS;
+    }
+    const parsed = JSON.parse(s);
+    if (!Array.isArray(parsed)) {
+      saveProjects(DEFAULT_PROJECTS);
+      return DEFAULT_PROJECTS;
+    }
+    const normalized = normalizeProjects(parsed);
+    if (normalized.length === 0) {
+      saveProjects(DEFAULT_PROJECTS);
+      return DEFAULT_PROJECTS;
+    }
+    const savedText = JSON.stringify(parsed);
+    const normalizedText = JSON.stringify(normalized);
+    if (savedText !== normalizedText) {
+      saveProjects(normalized);
+    }
+    return normalized;
+  } catch {
+    saveProjects(DEFAULT_PROJECTS);
+    return DEFAULT_PROJECTS;
+  }
 }
 
 function saveProjects(projects: Project[]) {

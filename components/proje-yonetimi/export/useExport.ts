@@ -17,10 +17,26 @@ function getDefinitions(contents: Contents): DefinitionEntry[] {
   return Array.isArray(d) ? d : [];
 }
 
+function sanitizeExportHtml(html: string): string {
+  return html
+    .replace(/-{2,}\s*Page(?:\s*\(\d+\)|\s*\d+)?\s*Break\s*-{2,}(?:<br\s*\/?>\s*\d+)?/gi, "")
+    .replace(/Page\s*Break/gi, "")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function flatText(html: string): string {
-  if (typeof window === "undefined") return html.replace(/<[^>]+>/g, " ").trim();
+  const cleaned = sanitizeExportHtml(html);
+  if (typeof window === "undefined") {
+    return cleaned
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s*\n\s*/g, "\n")
+      .trim();
+  }
   const div = document.createElement("div");
-  div.innerHTML = html;
+  div.innerHTML = cleaned;
   return (div.innerText || div.textContent || "").trim();
 }
 
@@ -40,11 +56,11 @@ export function exportWord(
   <meta charset="utf-8">
   <title>${projectName || "Fizibilite Etüdü EK K-1"}</title>
   <style>
-    body { font-family: Calibri, sans-serif; font-size: 11pt; color: #1a1d2e; margin: 2cm; }
-    h1 { font-size: 16pt; color: #2563eb; margin: 18pt 0 6pt; border-bottom: 1pt solid #2563eb; padding-bottom: 4pt; }
-    h2 { font-size: 13pt; color: #1a1d2e; margin: 14pt 0 4pt; }
-    h3 { font-size: 11pt; color: #4a5078; margin: 10pt 0 3pt; }
-    p  { margin: 4pt 0; line-height: 1.5; }
+    body { font-family: Calibri, sans-serif; font-size: 11pt; color: #1a1d2e; margin: 2cm; text-align: justify; text-justify: inter-word; }
+    h1 { font-size: 18pt; color: #2563eb; margin: 18pt 0 6pt; border-bottom: 1pt solid #2563eb; padding-bottom: 4pt; }
+    h2 { font-size: 15pt; color: #1a1d2e; margin: 14pt 0 4pt; }
+    h3 { font-size: 13pt; color: #4a5078; margin: 10pt 0 3pt; }
+    p  { margin: 5pt 0; line-height: 1.6; }
     .meta  { font-size: 9pt; color: #059669; margin-bottom: 6pt; }
     .field { font-size: 10pt; margin: 2pt 0 2pt 12pt; color: #374151; }
     .field strong { color: #1a1d2e; }
@@ -78,7 +94,7 @@ export function exportWord(
       }
 
       if (c.html?.trim() && c.html !== "<p></p>") {
-        html += `<div style="margin:6pt 0 6pt ${depth * 8}pt">${c.html}</div>`;
+        html += `<div style="margin:6pt 0 6pt ${depth * 8}pt">${sanitizeExportHtml(c.html)}</div>`;
       }
 
       if (c.form) {
@@ -141,11 +157,14 @@ export async function exportPdf(
     doc.setFontSize(size);
     doc.setFont("helvetica", bold ? "bold" : "normal");
     doc.setTextColor(...color);
-    const lines = doc.splitTextToSize(text, maxW - indent);
-    lines.forEach((line: string) => {
-      if (y > 280) { doc.addPage(); y = MARGIN; }
-      doc.text(line, MARGIN + indent, y);
-      y += LINE_H;
+    const paragraphs = text.split(/\r?\n/);
+    paragraphs.forEach(paragraph => {
+      const lines = doc.splitTextToSize(paragraph, maxW - indent);
+      lines.forEach((line: string) => {
+        if (y > 280) { doc.addPage(); y = MARGIN; }
+        doc.text(line, MARGIN + indent, y);
+        y += LINE_H;
+      });
     });
   }
 
@@ -160,7 +179,7 @@ export async function exportPdf(
   // Cover header
   doc.setFillColor(37, 99, 235);
   doc.rect(0, 0, 210, 28, "F");
-  doc.setFontSize(16);
+  doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(255, 255, 255);
   doc.text(projectName || "Fizibilite Etudu — EK K-1", MARGIN, 18);
@@ -178,13 +197,13 @@ export async function exportPdf(
         y += 2;
         doc.setFillColor(238, 242, 255);
         doc.rect(MARGIN, y - 4, USABLE_W, 9, "F");
-        addText(node.label, { size: 13, bold: true, color: [37, 99, 235] });
+        addText(node.label, { size: 15, bold: true, color: [37, 99, 235] });
         addHr([200, 208, 240]);
       } else if (depth === 1) {
-        addText(node.label, { size: 11, bold: true, color: [26, 29, 46], indent: 2 });
+        addText(node.label, { size: 12, bold: true, color: [26, 29, 46], indent: 2 });
         y += 1;
       } else {
-        addText(node.label, { size: 10, bold: false, color: [74, 80, 120], indent: 6 });
+        addText(node.label, { size: 11, bold: false, color: [74, 80, 120], indent: 6 });
       }
 
       if (c.html) {
@@ -226,7 +245,7 @@ export async function exportPdf(
   }
 
   // Page numbers
-  const pages = doc.internal.getNumberOfPages();
+  const pages = (doc.internal as any).getNumberOfPages();
   for (let i = 1; i <= pages; i++) {
     doc.setPage(i);
     doc.setFontSize(8);
