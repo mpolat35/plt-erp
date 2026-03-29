@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* Tailwind v4: dark mode class stratejisi */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  html, body {
+    font-family: "Outfit", sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html.dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  html.dark ::-webkit-scrollbar-track { background: #1e293b; }
+  html.dark ::-webkit-scrollbar-thumb { background: #475569; }
+  html.dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+}
+
+@keyframes gs-backdrop { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gs-modal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.gs-backdrop { animation: gs-backdrop 0.15s ease-out; }
+.gs-modal { animation: gs-modal 0.18s ease-out; }
+
+:root {
+  --c200: #cbd5e1;
+  --c400: #64748b;
+  --r6: 6px;
+  --b50: #eff6ff;
+  --b700: #1d4ed8;
+  --a50: #fffbeb;
+  --a700: #b45309;
+  --r50: #fef2f2;
+  --r700: #b91c1c;
+  --g50: #ecfdf5;
+  --g700: #047857;
+  --v50: #f5f3ff;
+  --v700: #6d28d9;
+}
+html.dark {
+  --c200: #475569;
+  --c400: #94a3b8;
+  --b50: rgba(30,58,138,.4);
+  --b700: #60a5fa;
+  --a50: rgba(120,53,15,.4);
+  --a700: #fbbf24;
+  --r50: rgba(127,29,29,.4);
+  --r700: #f87171;
+  --g50: rgba(6,78,59,.4);
+  --g700: #34d399;
+  --v50: rgba(76,29,149,.4);
+  --v700: #a78bfa;
+}
+/* INTER FONT */
+/* ICON BUTTONS */
+.ib{width:28px;height:28px;border:1px solid var(--c200);border-radius:999px;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.1s;flex-shrink:0}
+.ib svg{width:14px !important;height:14px !important;fill:none;stroke-width:1.8;pointer-events:none}
+.iv svg{stroke:var(--c400)}.iv:hover{background:var(--b50);border-color:rgba(37,99,235,.25)}.iv:hover svg{stroke:var(--b700)}
+.ie svg{stroke:var(--c400)}.ie:hover{background:var(--a50);border-color:rgba(217,119,6,.25)}.ie:hover svg{stroke:var(--a700)}
+.id svg{stroke:var(--c400)}.id:hover{background:var(--r50);border-color:rgba(220,38,38,.25)}.id:hover svg{stroke:var(--r700)}
+.io svg{stroke:var(--c400)}.io:hover{background:var(--g50);border-color:rgba(5,150,105,.25)}.io:hover svg{stroke:var(--g700)}
+.iw svg{stroke:var(--c400)}.iw:hover{background:var(--a50);border-color:rgba(217,119,6,.25)}.iw:hover svg{stroke:var(--a700)}
+.isy svg{stroke:var(--c400)}.isy:hover{background:var(--v50);border-color:rgba(124,58,237,.25)}.isy:hover svg{stroke:var(--v700)}
+.irow{display:flex;align-items:center;gap:3px;justify-content:flex-end}
+

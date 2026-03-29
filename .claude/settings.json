@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find 'c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2' -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.json \\\\\\) -path */data/* -o -path */constants/*)",
+      "Bash(ls -la \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/app/\\(admin\\)\")",
+      "Bash(find 'c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/app' -type d)",
+      "Bash(ls 'c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\\\\node_modules\\\\next\\\\dist\\\\docs')",
+      "Bash(ls '/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/node_modules/next/dist/docs/')",
+      "Bash(ls '/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/node_modules/next/dist/docs/01-app/')"
+    ]
+  }
+}

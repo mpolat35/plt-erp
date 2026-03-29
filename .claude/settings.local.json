@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"c:/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2\")",
+      "Bash(ls \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\\\\app\\\\\\(admin\\)\\\\ayarlar\")",
+      "Bash(ls \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\\\\components\")",
+      "Bash(wc -l \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\\\\components\\\\ayarlar\\\\BildirimAyarlari.tsx\")",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\" -type f -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.json\" -o -name \"*.js\")",
+      "Bash(ls -la \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\")",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/app\" -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.json\" \\\\\\))",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/components\" -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\))",
+      "Bash(tail -3 '/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/lib/data/yerBilgileriData.ts')",
+      "Bash(ls '/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/')",
+      "Bash(ls 'c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\\\\node_modules\\\\lucide-react\\\\dist')",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\" -type f -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.jsx\" -o -name \"*.js\")",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2\" -type f \\\\\\( -name \"*bildirim*\" -o -name \"*notification*\" \\\\\\) ! -path \"*/.next/*\" ! -path \"*/node_modules/*\")",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/app\" -type f -name \"*.tsx\" -o -name \"*.ts\")",
+      "Bash(find \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/components\" -type f -name \"*.tsx\" -o -name \"*.ts\")",
+      "Bash(wc -l \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/components/bildirim/BildirimAyarlari.tsx\")",
+      "Bash(ls -la \"c:\\\\Users\\\\mhmt\\\\Downloads\\\\admin-dashboard-v2 \\(3\\)\\\\admin-dashboard-v2/components/ui\")",
+      "Bash(grep -E \"\\\\.tsx?$\")",
+      "Read(//c/Users/mhmt/Downloads/**)",
+      "Bash(ls -la \"/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/\")",
+      "Bash(ls -la \"/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/components/\")",
+      "Bash(find \"/c/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/components\" -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\))",
+      "Bash(find . -type f \\\\\\(-name *.tsx -o -name *.ts \\\\\\))",
+      "Bash(xargs sed:*)",
+      "Bash(find \"c:/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/app/\\(admin\\)/tanimlamalar\" -name \"page.tsx\")",
+      "Bash(find \"c:/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/app/\\(admin\\)\" -name \"page.tsx\")",
+      "Bash(find \"c:/Users/mhmt/Downloads/admin-dashboard-v2 \\(3\\)/admin-dashboard-v2/app/\\(admin\\)/fatura\" -name \"*.tsx\")"
+    ]
+  }
+}

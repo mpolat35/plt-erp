@@ -1,0 +1,334 @@
+ 
+ F a tu ra  
+M  e n ü   ü z e r in d e n   fa tu ra   işle m  le r in e   g ir ild iğin d e   ilk   o la ra k   F a tu ra   L is te   (a şa ğıd a   g ö s te r ilm  iştir )  e k ra n ı 
+g ö r ü n ü r. E k ra n ın  s a ğ ü s t ta ra fın d a  b u lu n a n  E K L E  b u to n u n a  b a s ıld ığın d a  a şa ğıd a k i e k ra n  a ç ılır.   
+ 
+F a tu ra  L is te  E k ra n ı 
+F a tu ra   L is te   e k ra n ı,  işle tm  e   iç e r is in d e   y a p ıla n   tü m    fa tu ra   işle m  le r in in   to p lu   o la ra k   lis te le n d iği  b ir  
+a ra y ü z d ü r. 
+ 
+S is te m  e   k a y ıtlı  o la n   fa tu ra   işle m  le r in in   lis te le n d iği  v e     a ra m  a   y a p ıla b ild iği  e k ra n d ır.  s a ğ  ta ra fın d a  
+b u lu n a n  D e ta y  b u to n u n a  b a s ıld ığın d a  ilg ili işle m   g ö r ü n tü le n ir. 
+ 
+A ra m  a  e k ra n ın d a k i filtre  b u to n u  tık la n d ığı z a m  a n  d e ta y lı a ra m  a  /  filtre le m  e  ö z e lliği ç ık a c a k tır. K u lla n ıc ı 
+b u ra d a   ih tiy a c ın a   g ö re   g e re k li  d e ta y lı  a ra m  a   y a   d a   filtre le m  e y i  y a p a b ile c e k tir.  Ö  r n e ğin  fa tu ra  n o  v b  
+a la n la rla   s ın ırlı  b ir   şe k ild e   a ra m  a   y a p a b ile c e k tir.  L is te n in   ü s t  k ıs m  ın d a   y e r   a la n   s e ç e n e k   lis te s i  h ız lı 
+filtre le m  e  s e ç e n e k le r id ir. V a r s a y ıla n  o la ra k  “H e p s i” s e ç ili g e le c e k tir. D iğe r  h ız lı filtre le m  e  s e ç e n e k le r i is e  
+A  lış, S a tış, A  lış İa d e , S a tış İa d e  d ir. H ız lı filtre le m  e  ta r ih  a ra lığı s e ç ile re k  k u lla n ıc ı is te d iği ta r ih  a ra lığın d a k i 
+fa tu ra la r ı g ö r ü n tü le y e b ilm  e lid ir. D e ta y lı filtre le m  e d e  lis te  b a şlık la r ın ın  ta m  a m  ı k u lla n ıla b ilm  e lid ir.  
+H e r   lis te   e le m  a n ın   s o l  ta ra fın d a   b u lu n a n   k u tu c u ğa   tık la d ığın ız d a   o   işle m    s e ç ilm  iş  o lu r.  L is te n in   b a şlık  
+k ıs m  ın d a  b u lu n a n  k u tu c u k  tık la n d ığın d a  is e  b ü tü n  lis te  e le m  a n la r ı s e ç ilm  iş o lu r. 
+ 
+M  u h a s e b e le ştir   B u to n u n a   b a s ıld ığın d a   is e   s e ç ili  o la n   b ü tü n   işle m  le r in   y e v m  iy e  k a y d ı y a p ıla ra k , h e s a p  
+p la n ın a   k a y d e d ilm  iş  o lu r.  M  u h a s e b e le ştir ile n   h e r   fa tu ra d a   b u lu n a n   “M  u h a s e b le ştir ild i  m  i? ”  v e r i  a la n ı 
+“E v e t” o la ra k  g ü n c e lle n ir.   
+----------------Page (0) Break----------------
+ 
+F a tu ra  E K L E  / D Ü Z E N L E  E k ra n ı 
+ 
+ 
+F a tu ra , s a tıc ı fir m  a  ta ra fın d a n  a lıc ı fir m  a  a d ın a  ta n z im   e d ile n , m  a l v e y a  h iz m  e tin  s a tıld ığın ı g ö s te re n  b ir  
+b e lg e d ir. 
+Y u k a r ıd a    F a tu ra    o lu ştu r m  a k    iç in   k u lla n ıla c a k   e k ra n ın   ta m    g ö r ü n tü s ü   v e r ilm  iştir.  K u lla n ıc ı  F a tu ra  
+işle m  le r in d e   A  lıc ı  y a d a   S a tıc ı  ta ra fı  o la b ilir.  F o r m  d a   b u lu n a n   a la n la r   a şa ğıd a   b ö lü m  le r   h a lin d e  
+a ç ık la n m  ıştır. A  k o rd iy o n  h e r  b ö lü m  ü n  a ç ılıp  k a p a n m  a s ın ı s a ğla r.   
+----------------Page (1) Break----------------
+ 
+ 
+B ö lü m   1 : 
+ 
+ 
+1.      F a tu ra   T ip i  :  F a tu ra   tip in i  b e lirle m  e k   iç in   k u lla n ılır ;  S a tış,  A  lış,  S a tış  İa d e ,  A  lış  İa d e ,  T e v k ifa tlı  A  lış, 
+T e v k ifa tlı  S a tış,  İh ra ç  K a y ıtlı A  lış, İh ra ç  K a y ıtlı S a tış   s e ç e n e k le r i s u n u lu r. F a rk lı fa tu ra  tip le r i, işle m  in  
+n ite liğin e  b a ğlı o la ra k  ç e şitli m  u h a s e b e  h e s a p la r ın ı e tk ile r. (S e ç e n e k  L is te s i- Z o r u n lu ). 
+ 
+F a tu ra  T ip i S e ç e n e k le r i 
+A  lış 
+S a tış 
+A  lış İa d e  
+S a tış İa d e  
+T e v k ifa tlı A  lış 
+T e v k ifa tlı S a tış 
+İh ra ç  K a y ıtlı A  lış 
+İh ra ç  K a y ıtlı S a tış 
+ 
+2 .     C a r i : F a tu ra n ın  m  u h a ta b ın ın  s e ç ile c e ği a la n d ır (S e ç e n e k  L is te s i- Z o r u n lu ). E ğe r ; 
+●  F a tu ra  tip in d e  S a tış v e y a  S a tış İa d e  s e ç ilm  işs e ,C a r i M  ü şte r i lis te s i g e lm  e lid ir. 
+●  F a tu ra  tip in d e  A  lış v e y a  A  lış İa d e  s e ç ilm  işs e , C a r i T e d a r ik ç i  lis te s i g e lm  e lid ir. 
+3 .     C a r i  H e s a p  K o d u  : S e ç ile n  c a r i h e s a b a  a it H e s a p  k o d u n u n  s e ç ild iği a la n d ır. V a r s a y ıla n  o la ra k  C a r i 
+k a r tta     b e lir tile n    h e s a p    k o d u    s e ç ili   g e lir.   İs te r s e    k u lla n ıc ı   d e ğiştire b ilir.   (M  e tin - (S e ç e n e k  
+L is te s i)- Z o r u n lu ) 
+----------------Page (2) Break----------------
+ 
+4 .     E k le   :  E ğe r   M  ü şte r i  v e y a   T e d a r ik ç i  lis te s in d e   o lm  a y a n   b ir   c a r i  v a r s a   E k le   b u to n u n a    b a s ıld ığın d a  
+C a r i e k le m  e  e k ra n ı a ç ılm  a lır. 
+5 .     F a tu ra  N o  : F a tu ra y a  a ta n a c a k  b e n z e r s iz  n u m  a ra y ı b e lir tir. E - fa tu ra  işle m  le r in d e ; 
+●  E - fa tu ra   T e m  e l  F a tu ra   s e ç ild iğin d e   F T M  2 0 2 4 0 0 0 0 0 0 0 0 1  şe k lin d e   “F T M  ” fa tu ra  te m  e l 
+fa tu ra y ı,  “2 0 2 4 ”  iç in d e   b u lu n a n   c a r i  y ılı,  d e v a m  ın d a k i  ra k a m    is e   s is te m    ta ra fın d a n  
+s ıra y la  a ta n a n  n u m  a ra y ı te m  s il e d e r.  
+●  E - fa tu ra   T ic a r i  F a tu ra   s e ç ild iğin d e   F T C  2 0 2 4 0 0 0 0 0 0 0 0 1  şe k lin d e   “F T C  ”  fa tu ra   tic a r i 
+fa tu ra y ı,  “2 0 2 4 ”  iç in d e   b u lu n a n   c a r i  y ılı,  d e v a m  ın d a k i  ra k a m    is e   s is te m    ta ra fın d a n  
+s ıra y la  a ta n a n  n u m  a ra y ı te m  s il e d e r.  
+●  E - A r şiv    s e ç ild iğin d e  F A  R 2 0 2 4 0 0 0 0 0 0 0 0 1 şe k lin d e  “F A  R ” e - a r şiv  fa tu ra y ı, “2 0 2 4 ” iç in d e  
+b u lu n a n   c a r i  y ılı,  d e v a m  ın d a k i  ra k a m    is e   s is te m    ta ra fın d a n   s ıra y la   a ta n a n   n u m  a ra y ı 
+te m  s il   e d e r.   B u    n u m  a ra    s is te m     ta ra fın d a n    o to m  a tik    o la ra k    a ta n ır    v e    m  a n u e l 
+m  ü d a h a le y e  g e re k  k a lm  a z . 
+ 
+6 .     F a tu ra   T ü r ü   :  F a tu ra   tü r ü n ü n   s e ç ild iği  a la n d ır.  B u ra d a k i s e ç e n e k le r  E - F a tu ra , E - A r şiv , S e r i/ N o ’ d u r. 
+F a tu ra n ın   e le k tro n ik   m  i  y o k s a   b a s ılı  F a tu ra (E s k i  U s ü l)  fa tu ra   m  ı  o la c a ğın ı  b e lirle y e n   b ir   s e ç im   
+a la n ıd ır.  S e r i  fa tu ra   s e ç e n e ği  is e ,  fa tu ra   n u m  a ra s ın ın   m  a n u e l  o la ra k   g ir ilm  e s in e   o la n a k   ta n ır.  B u  
+d u r u m  d a  b ö lü m   4 ’te  g ö r ü le n  a la n la r  F a tu ra  N o  y e r in e  g ö r ü n tü le n ir. (S e ç e n e k  L is te s i- Z o r u n lu ) 
+ 
+F a tu ra  T ü r ü  S e ç e n e k le r i 
+E - F a tu ra  
+E - A r şiv  
+F a tu ra (E s k i U s ü l) 
+ 
+7 .     S e n a r y o  : S e ç ile n  fa tu ra  tü r ü n e  g ö re  b e lirle n e n  fa tu ra  s e n a r y o s u d u r.(S e ç e n e k  L is te s i- Z o r u n lu ) 
+●  F a tu ra  T ü r ü  E - F a tu ra  o ld u ğu n d a  s e ç e n e k le r  T e m  e l F a tu ra  v e  T ic a r i F a tu ra ’d ır. 
+●  F a tu ra  T ü r ü  E - A r şiv  o ld u ğu n d a  s e ç e n e k  E - A r şiv ’d ir. 
+●  F a tu ra   T ü r ü   F a tu ra (E s k i  U s ü l)  o ld u ğu n d a   s e ç e n e k   F a tu ra (E s k i  U s ü l)’d u r.  F a tu ra   tü r ü  
+F a tu ra (E s k i U s ü l)y a ln ız c a  e s k i tip  k e s ile n  fa tu ra la r  iç in  k u lla n ılm  a lıd ır. 
+ 
+F a tu ra  T ü rü                                 1.   S e ç e n e k                           2 .   S e ç e n e k  
+E - F a tu ra                                           T e m  e l F a tu ra                                T ic a r i F a tu ra  
+E - A r şiv                                               E - A r şiv                                   
+----------------Page (3) Break----------------
+ 
+F a tu ra (E s k i U s ü l)                             F a tu ra (E s k i U s ü l)                    
+ 
+ 
+8 .     F a tu ra  T a r ih i v e  S a a ti : F a tu ra n ın  d ü z e n le n d iği ta r ih i v e  s a a ti b e lir tir. B u  ta r ih , ilg ili fa tu ra  işle m  le r in in  
+y a s a l  o la ra k   ta n ın m  a s ı  v e   m  u h a s e b e le ştir ilm  e s i  a ç ıs ın d a n   ö n e m  lid ir.  F a tu ra   ta r ih i, a y n ı z a m  a n d a  
+fa tu ra n ın   g e ç e rliliği  v e   ö d e m  e   s ü re c in in   b a şla n g ıc ı  iç in   te m  e l  b ir   v e r id ir.  V a r s a y ıla n   o la ra k   işle m   
+ta r ih i v e  s a a tid ir.(T a r ih - Z o r u n lu ) 
+9 .     D ö v iz   T ü r ü   :  F a tu ra d a   k u lla n ıla c a k   p a ra   b ir im  in   s e ç ild iği  a la n d ır.  V a r s a y ıla n   o la ra k   T L   s e ç ili 
+g e lm  e lid ir.  D iğe r   p a ra   b ir im  le r i  s e ç e n e k   o la ra k   g ö r ü n ü r   .  T L   d ışın d a k i  p a ra   b ir im  le r i  s e ç ild iğin d e  
+M  e rk e z    B a n k a s ı   A  lış   K u r u    ü z e r in d e n    to p la m     T u ta r    v e    T o p la m     K D V    h e s a p la n ır.   (S e ç e n e k  
+L is te s i- Z o r u n lu ) 
+10 .   D ö v iz / T L :  E ğe r   s e ç ile n   d ö v iz   tü r ü   T L ’d e n   fa rk lı  is e ,  s e ç ile n   d ö v iz in   fa tu ra   g ü n ü   T L   k a r şılığın ın  
+y a z ıld ığı a la n d ır. T L  s e ç ili o ld u ğu n d a  b u  a la n ın  d e ğe r i 1 o lu r.  (S a y ı- Z o r u n lu ) 
+11.    S e r i  v e   N o   A  la n la r ı  :  F a tu ra   tü r ü   F a tu ra (E s k i  U s ü l)s e ç ild iğin d e   a k tif  h a le   g e le n ,  d iğe r   s e ç im  le rd e  
+D is a b le d  o la n  a la n la rd ır. K u lla n ıc ı ta ra fın d a n  e lle  d o ld u r u la n  a la n la rd ır. (M  e tin - O  p s iy o n e l) 
+ 
+ 
+12 .   Ö  d e m  e   D u r u m  u   :  F a tu ra n ın   d ü z e n le n d iği  ta r ih te   ö d e n ip   ö d e n m  e d iğin in   b e lirle n d iği  a la n d ır.  İk i 
+s e ç e n e k te n    o lu şu r.  S e ç e n e k le r   Ö  d e n d i  v e   Ö  d e n e c e k ’tir.  (S e ç e n e k   L is te s i- Z o r u n lu ).     Ö  d e n d i 
+s e ç e n e ği  s e ç ilm  işs e   fa tu ra   k a y d e d ild ik te n  s o n ra  T a h s ila t O  lu ştu r / D ü z e n le  E k ra n ı ilg ili c a r i s e ç ilm  iş 
+h a ld e  a ç ılır. (A  L IŞ F A T U R A S I n d a  g ö s te r ilir.) 
+ 
+Ö  d e m  e  D u r u m  u  
+Ö  d e n d i 
+Ö  d e n e c e k  
+ 
+13 .    V a d e  T a r ih i :  Ö  d e n e c e k   o la n   fa tu ra la rd a ,  ö d e m  e n in   y a p ılm  a s ı  g e re k e n   s o n   ta r ih i  b e lir tir.  V a d e  
+ta r ih i,  a la c a k la r ın   z a m  a n ın d a  ta h s il e d ilm  e s i v e  n a k it a k ışın ın  p la n la n m  a s ı a ç ıs ın d a n  ö n e m  lid ir. B u  
+----------------Page (4) Break----------------
+ 
+ta r ih ,  m  ü şte r i  ile   y a p ıla n   ö d e m  e   a n la şm  a s ın a   g ö re   b e lirle n ir.  F a tu ra   a n ın d a   ö d e m  e   y a p ıla c a k s a  
+v a d e  ta r ih i fa tu ra  ta r ih in e  e şit o lu r. V a r s a y ıla n  o la ra k  F a tu ra  ta r ih i ile  a y n ı o lm  a lıd ır.(T a r ih - Z o r u n lu ) 
+14 .    
+15 .   İr s a liy e  D u r u m  u  : F a tu ra  ile  a lın a n  y a d a  s a tıla n  ü r ü n le r  iç in  ir s a liy e  d ü z e n le n ip  d ü z e n le n e y e c e ğin in  
+b e lirle n d iği a la n d ır.(S e ç e n e k  L is te s i- Z o r u n lu ) 
+●  İr s a liy e li  F a tu ra   :  B u   s e ç e n e k   s e ç ild iğin d e   a y r ıc a  b ir  ir s a liy e  d ü z e n le n m  e z . O  lu ştu r u la n  
+fa tu ra n ın  a ç ık la m  a  a la n ın a  “İr s a liy e  y e r in e  g e ç e r ” ib a re s i e k le n ir. Ü r ü n  a lış fa tu ra s ın d a  
+m  u a y e n e   k a b u ld e n   g e le n   te y itte n  s o n ra  F a tu ra  k a y d e d ilir. Ü r ü n  s a tışta    ü r ü n le r in  ç ık ış 
+işle m  le r i d e  fa tu ra   ile  b irlik te  y a p ılır. 
+●  İr s a liy e s iz   F a tu ra   :  B u ra d a   h iç b ir   şe k ild e   ir s a liy e   d ü z e n le n m  e z .  Ö  r n e ğin   h iz m  e t  a lım   
+v e y a  s a tım  ı. 
+●  İr s a liy e  : İr s a liy e  ta r ih  v e  n o ’s u n u n  k u lla n ıc ı ta ra fın d a n  m  a n u e l o la ra k  g ir ild iği s e ç e n e k tir. 
+B u  s e ç e n e k  s e ç ild iğin d e  d is a b le d  d u r u m  d a  b u lu n a n  İr s a liy e  N o  v e  İr s a liy e  T a r ih  a la n la r ı 
+a k tif h a le  g e lir. V e r i g ir işi k u lla n ıc ı ta ra fın d a n  g e rç e k le şir. 
+ 
+İr s a liy e  D u r u m  u  S e ç e n e k le r i 
+İr s a liy e li F a tu ra  
+İr s a liy e s iz  F a tu ra  
+İr s a liy e  
+ 
+16 .    İr s a liy e  N o : İr s a liy e  d u r u m  u n d a  M  a n u e l İr s a liy e  s e ç ild iğin d e  a k tif h a le  g e le n  v e  k u lla n ıc ı ta ra fın d a n  
+g ir ile n  a la n d ır. İr s a liy e  N u m  a ra s ı b u  a la n a  g ir ilir.(M  e tin - O  p s iy o n e l) 
+17 .    İr s a liy e   T a r ih i  :  İr s a liy e   d u r u m  u n d a   M  a n u e l  İr s a liy e   s e ç ild iğin d e   a k tif  h a le   g e le n   v e   k u lla n ıc ı 
+ta ra fın d a n  g ir ile n  a la n d ır. İr s a liy e  ta r ih in in  s e ç ild iği a la n d ır.(T a r ih - O  p s iy o n e l) 
+18 .     
+19 .     
+2 0 .   
+ 
+2 1.   M  a l/ H iz m  e t:  B u   k ıs ım  d a   fa tu ra   k a p s a m  ın d a   a lın a n   m  a l  v e y a   h iz m  e tin   a d ı  y e r   a lır.  S e ç e n e k  
+lis te s in d e n  s e ç ile re k  m  a l v e  h iz m  e t b ilg is i k a y d ı y a p ılır. S e ç ile n  ü r ü n  v e y a  h iz m  e te  a it d iğe r  b ilg ile r  
+k a r tla rd a n  g e lir  v e  v a r s a y ıla n  d e ğe r  o la ra k  ilg ili a la n la ra  k a y d e d ilir.(M  e tin - Z o r u n lu ) 
+2 2 .   M  ik ta r : F a tu ra  k a p s a m  ın d a k i ü r ü n  v e y a  h iz m  e tin  m  ik ta r ı k u lla n ıc ı ta ra fın d a n  y a z ılır.(S a y ı- Z o r u n lu ) 
+2 3 .   B ir im    :  S e ç ile n   ü r ü n   v e y a   h iz m  e tin   b ir im  in in   s e ç ild iği  a la n d ır.  S e ç ile n   ü r ü n   v e y a  h iz m  e t k a r tın d a n  
+g e le n  b ir im   b ilg is i v a r s a y ıla n  o la ra k  g e lir. K u lla n ıc ı is te r s e  d e ğiştire b ilir.(S e ç e n e k  L is te s i- Z o r u n lu )  
+----------------Page (5) Break----------------
+ 
+2 4 .   B ir im    F iy a t:  F a tu ra   k o n u s u   ü r ü n   v e y a   h iz m  e tin   b ir im    fiy a tı  b e lirle n e n   d ö v iz   k u r u   n e v in d e n   y a z ılır.  
+Ü r ü n  v e y a  h iz m  e t s e ç ild iğin d e  v a r s a y ıla n  b ir im   fiy a t b ilg is i s e ç ile n  k a r tta n  g e lir. K u lla n ıc ı is te r s e  b u  
+v e r iy i d e ğiştire b ilir. 
+2 5 .  İs k o n to : B ir im   m  ik ta r  iç in  y a p ıla n  is k o n to  o ra n ı y ü z d e lik  o la ra k  (% ) y a z ılır. 
+2 6 .   K D V  O  ra n ı: Ü r ü n  v e y a  h iz m  e te  u y g u la n a c a k  K D V  o ra n ı y ü z d e  o la ra k  y a z ılır. B u  a la n d a  s e ç ile n  ü r ü n  
+v e y a   h iz m  e t  k a r tın d a n   g e le n   K D V   b ilg is i  v a r s a y ıla n   o la ra k   y a z ılır.  İs te r s e   k u lla n ıc ı  b u   b ilg iy i 
+d e ğiştire b ilir. S e ç e n e k le r  % 0 ,% 1,% 10 ,% 2 0 .(S e ç e n e k  L is te s i- Z o r u n lu ) 
+2 7 .    
+2 8 .    
+2 9 .    
+ 
+3 0 .    
+3 1.     
+3 2 .   D iğe r  V e rg i T ü r ü : K D V  v e  Ö  T V  d ışın d a k i d iğe r  v e rg in in  s e ç ild iği a la n d ır.(S e ç e n e k  L is te s i- O  p s iy o n e l) 
+3 3 .   D iğe r  V e rg i O  ra n ı: D iğe r  v e rg i o ra n ı y ü z d e  o la ra k  y a z ılır.(S a y ı- O  p s iy o n e l) 
+3 4 .   E k le  B u to n u  : F a tu ra  k a p s a m  ın d a  a lın a n  v e y a  s a tıla n  m  a l v e y a  h iz m  e t b ilg ile r in i lis te y e  e k le y e n  v e  
+y e n i g ir iş iç in  ü r ü n / h iz m  e t b ilg is i fo r m  u n u  te m  iz le y e n  b u to n d u r.  
+ 
+3 5 .    
+3 6 .   T o p la m    T u ta r (T L )  :  F a tu ra d a k i  tü m    m  a l  v e   h iz m  e tle r in   T L   c in s in d e n   to p la m    tu ta r ın ı  g ö s te r ir.  B u  
+a la n ,  is k o n to ,  K D V   v e   d iğe r   v e rg ile r   h a r iç ,  s a f  tu ta r ı  te m  s il  e d e r.  F a tu ra   ü z e r in d e   y a p ıla n   tü m   
+işle m  le r in  g e n e l to p la m  ın ı v e r ir  v e  b u  tu ta r, d iğe r  m  a liy e tle rle  b irlik te  n ih a i fa tu ra  tu ta r ın a  u la şm  a k  
+iç in  k u lla n ılır. (S a y ı- Z o r u n lu ) 
+----------------Page (6) Break----------------
+ 
+3 7 .   T o p la m    İs k o n to   :  F a tu ra d a   u y g u la n a n   to p la m    is k o n to  tu ta r ın ı g ö s te r ir. İs k o n to , m  ü şte r i ile  y a p ıla n  
+a n la şm  a la r   d o ğr u ltu s u n d a   b e lirle n e b ilir   v e   b u   a la n ,  to p la m    tu ta rd a n   d ü şü le n   in d ir im  i  g ö s te r ir. 
+İs k o n to   o ra n ı  v e   tu ta r ı,  m  ü şte r ile re   s a ğla n a n   a v a n ta jla r ın   v e   in d ir im  le r in   şe ffa f  b ir   şe k ild e  
+g ö s te r ilm  e s in i  s a ğla r.  M  u h a s e b e le ştir m  e   işle m  in d e   6 11- S a tış  İs k o n to la r ı  H e s a b ın a   g id e c e k   tu ta r ı 
+g ö s te r ir. (S a y ı- O  p s iy o n e l) 
+3 8 .   K D V   :  S e ç ile n   K D V   o ra n ın a   g ö re   h e s a p la n a n  tu ta r  ilg ili a la n a  y a z ılır. Ö  r n e ğin  % 1 K D V  o ra n ın a  ta b i 
+o la n  b ir  ü r ü n e  a it T o p la m   K D V  tu ta r ı % 1 a la n ın d a , % 10  K D V  o ra n ın a  ta b i o la n  ü r ü n  v e y a  h iz m  e t is e  
+% 10  a la n ın d a  a y r ıc a  g ö s te r ilir. B ird e n  fa z la  K D V  a la n ı d a  d o lu  o la b ilir.(S a y ı- Z o r u n lu ) 
+3 9 .   T o p la m   K D V  : F a tu ra d a  u y g u la n a n  to p la m   K a tm  a  D e ğe r  V e rg is i (K D V ) tu ta r ın ı g ö s te r ir. K D V , y a s a l 
+o la ra k   z o r u n lu   o la n   b ir   v e rg i  o lu p ,  ü r ü n   v e   h iz m  e tle r in   g e n e l  s a tış  fiy a tın a   e k le n ir.  B u   a la n ,  K D V  
+o ra n ın ın    v e    tu ta r ın ın    d o ğr u    b ir    şe k ild e    h e s a p la n m  a s ı   v e    fa tu ra d a    g ö s te r ilm  e s in i   s a ğla r. 
+(S a y ı- Z o r u n lu ) 
+4 0 .   
+4 1.    
+4 2 .  V e rg ile r   D a h il  T o p la m    T u ta r   :  T ü m    v e rg ile r   d a h il  e d ile re k   h e s a p la n a n   to p la m    tu ta r ı  g ö s te r ir.  B u , 
+m  ü şte r in in   ö d e m  e s i  g e re k e n   n ih a i  tu ta r ı  b e lir tir   v e   tü m    v e rg is e l  y ü k ü m  lü lü k le r   b u   tu ta ra   d a h il 
+e d ilm  iştir. V e rg ile r  d a h il to p la m   tu ta r, m  ü şte r i v e  s a tıc ı a ra s ın d a k i m  a li y ü k ü m  lü lü k le r in  k e s in le şm  e s i 
+a ç ıs ın d a n  ö n e m  lid ir. (S a y ı- Z o r u n lu ) 
+4 3 .   Ö  d e n e c e k  T u ta r  : F a tu ra d a k i tü m   k a le m  le r in  to p la m   tu ta r ın ı, is k o n to  v e  v e rg ile r  d a h il o lm  a k  ü z e re  
+g ö s te r ir.  M  ü şte r in in   ö d e m  e s i g e re k e n  n ih a i tu ta rd ır  v e  b u  tu ta r, fa tu ra n ın  e n  a lt k ıs m  ın d a  b e lir tilir. 
+H e m    m  ü şte r i  h e m    d e   s a tıc ı  iç in   n ih a i m  a liy e ti te m  s il e d e r  v e  ö d e m  e  işle m  le r in d e  re fe ra n s  o la ra k  
+k u lla n ılır. (S a y ı- Z o r u n lu ) 
+4 4 .  A ç ık la m  a   :  B u   a la n d a   fa tu ra y a   a it  A ç ık la m  a   b ilg ile r i  b u lu n u r.  B ir   K D V   is tis n a s ı  y a d a   te v k ifa tı 
+u y g u la n ıy o r s a ,  a ç ık la m  a   a la n ın d a   b u   is tis a n ın   v e y a   te v k ifa tın    k o d u  v e  a d ı y a z ılır. A y r ıc a  İr s a liy e li 
+fa tu ra  s e ç ilm  işs e  B u  a la n d a  “İr s a liy e  y e r in e  g e ç e r.” y a z ıs ı b u lu n u r. (M  e tin - O  p s iy o n e l) 
+4 5 .  K a y d e t  B u to n u   :  F o r m  u n   ü s t  k ıs m  ın d a     g e re k li  v e r ile r in   g ir ilm  e s i  s o n ra s ın d a   K a y d e t  b u to n u n a  
+b a s ıld ığın d a ,  işle m    b ü tü n   b ilg ile rle   b e ra b e r   F a tu ra   o la ra k   k a y d e d ilir.  A y r ıc a   fa tu ra   tü r ü   E - A r şiv  
+fa tu ra la r  o la n la r  E - a r şiv  b ö lü m  ü n e , T e m  e l F a tu ra  v e  T ic a r i F a tu ra  o la n la r  E - F a tu ra  a la n ın a  a k ta r ılır.  
+(Z o r u n lu  a la n la r ı g ö s te re n  u y a r ıla r  v e r ilm  e lid ir. Z o r u n lu  a la n la r  d o ld u r u lm  a d a n  K a y d e t b u to n u  a k tif 
+h a le  g e lm  e m  e lid ir ).  
+E ğe r   o to m  a tik   y e v m  iy e   k a y d ı  o lu ştu r u lm  a s ı  is te n m  iş  is e   y e v m  iy e   k a y d ı  d a   y a p ılm  a lıd ır.  A y r ıc a  
+fa tu ra  d u r u m  u  ö d e n d i o la n la r  k a y d e d ild ik te n  s o n ra  ö d e m  e  e k ra n ı o to m  a tik  a ç ılm  a lıd ır. 
+E ğe r  s e ç ile n  fa tu ra  tip i;  
+        
+----------------Page (7) Break----------------
+ 
+D ü z e n le m  e  v e  S ilm  e  İşle m  le ri:  F a tu ra   lis te   e k ra n ın d a  b u lu n a n  fa tu ra la rd a  s ilm  e  v e  d ü z e n le m  e  işle m  i 
+a şa ğıd a k i s e n a r y o la ra  g ö re  g e rç e k le ştir ilir. 
+ 
+●  F a tu ra   d u r u m  u   “T a s la k ”  v e y a   “H a ta lı”  o la n la r   ü z e r in d e  d ü z e n le m  e  y a p ıla b ilir  v e y a  b u  
+fa tu ra la r    s is te m  d e n    ta m  a m  e n    s ilin e b ilir (B u    d u r u m  d a    s ilin e n    fa tu ra la r    B ila n ç o  
+h e s a p la r ın ı e tk ile m  e z , v e r i ta b a n ın d a  s a k la n m  a z ).  
+ 
+●  F a tu ra   d u r u m  u   “G  ö n d e r ild i”,  “İle tild i”  v e y a   “K a b u l  E d ild i”  o la n la r   ü z e r in d e   d ü z e n le m  e  
+v e y a   s ilm  e   işle m  i  y a p ılm  a s ın a   iz in   v e r ilm  e z .   D u r u m  u  “İle tild i” v e y a  “K a b u l E d ild i” o la n  
+fa tu ra la r   iç in   ip ta l  ta le b i  o lu ştu r u la b ilir.    İp ta l  işle m  i  E - F a tu ra   v e   E - A r şiv   İşle m  le r i 
+m  e n ü s ü n d e n  y a p ılır. İp ta l e d ile n le r in  fa tu ra  d u r u m  u  “İp ta l E d ild i” o lu r. H e s a p  p la n ın d a n  
+k a ld ır ılır (B ila n ç o   h e s a p la r ın ı  e tk ile m  e z   h a le   g e tir ilir ).  F a k a t  s is te m  d e   fa tu ra   d u r u m  u   
+“İp ta l e d ild i” o la ra k  m  u h a fa z a  e d ilir. 
+ 
+●  F a tu ra   d u r u m  u   “İp ta l  E d ild i”  v e y a   “R e d d e d ild i”  o la n la r   v e r i  ta b a n ın d a n   s ilin m  e z .  B u  
+fa tu ra la ra   a it  F a tu ra   n u m  a ra s ı  b a şk a   b ir   fa tu ra d a   k u lla n ılm  a z .  F a k a t  b u   fa tu ra la r  
+H e s a p  P la n ın ı e tk ile m  e z (B ila n ç o  h e s a p la r ın ı e tk ile m  e z  h a ld e  k a lır ). 
+ 
+D e ta y    b u to n u n a    b a s ıld ığın d a    ilg ili   fa tu ra    b ilg ile r i   a şa ğıd a k i   g ö s te r ile n    fo r m     a la n ın d a    b ilg ile r  
+d o ld u r u lm  u ş h a ld e  g ö s te r ilir. 
+----------------Page (8) Break----------------
+ 
+ 
+A ç ıla n  e k ra n d a , ilk  ta b d a  fa tu ra  b ilg ile r i d o lu  h a ld e  g ö s te r ilir. İk in c i ta b d a  is e  a şa ğıd a  g ö s te r ile n  şe k ild e  
+fa tu ra  ile  ilişk ile n d ir ile n  ta h s ila t v e y a  ö d e m  e  lis te s i g ö s te r ilir. 
+----------------Page (9) Break----------------
+ 
+ 
+B u   e k ra n   fa tu ra y la   ilg ili  ö d e m  e le r i  v e y a   ta h s ila tla r ı  k u lla n ıc ın   g ö r m  e s in i  s a ğla r.  Y a p ıla n   ta h s ila t  v e y a  
+ö d e m  e le re  tık la n d ığın d a  ilg ili ta h s ila t v e y a  ö d e m  e  işle m  i g ö r ü le b ile c e k tir. 
+ 
+F a tu ra  İşle m  le r in d e  k u lla n ıla n  v e r i a la n la r ı a şa ğıd a  ta b lo  h a lin d e  g ö s te r ilm  iştir. 
+ 
+Sıra 
+No 
+Alan Adı               Veri Tipi             Zorunlu mu? 
+1 
+Fatura Tipi            Seçenek Listesi                    Evet 
+2 
+Cari                Seçenek Listesi                    Evet 
+3  Cari Hesap Kodu         Metin                          Evet 
+4  Fatura No             Metin                          Evet 
+5 
+Fatura Türü            Seçenek Listesi                    Evet 
+6 
+Senaryo              Seçenek Listesi                    Evet 
+7 
+Fatura Tarihi ve Saati      Tarih                          Evet 
+8 
+Döviz Türü            Seçenek Listesi                    Evet 
+9  Döviz/TL             Sayı                          Evet 
+10  Seri ve No             Metin                          Hayır 
+11 
+Ödeme Durumu         Seçenek Listesi                    Evet 
+----------------Page (10) Break----------------
+ 
+12  Vade Tarihi            Tarih                          Evet 
+13 
+                                                  
+14 
+İrsaliye Durumu         Seçenek Listesi                    Evet 
+15  İrsaliye No            Metin                          Hayır 
+16  İrsaliye Tarihi           Tarih                          Hayır 
+17                                                    
+18                                                    
+19                                                    
+20 
+Mal/Hizmet            Seçenek Listesi                    Evet 
+21  Miktar               Sayı                          Evet 
+22  Birim                Metin                          Evet 
+23  Birim Fiyat            Sayı                          Evet 
+24  İskonto              Sayı                          Hayır 
+25 
+KDV Oranı            Seçenek Listesi                    Evet 
+26 
+                                                  
+27                                                    
+28 
+                                                  
+29 
+                                                  
+30                                                    
+31 
+                                                  
+32  Diğer Vergi Oranı        Sayı                          Hayır 
+33 
+Mal/Hizmet Toplam 
+Tutar(Döviz)           Sayı                          Hayır 
+34  Toplam Tutar(TL)         Sayı                          Evet 
+35  Toplam İskonto          Sayı                          Hayır 
+36  KDV                Sayı                          Evet 
+37  Toplam KDV           Sayı                          Evet 
+38                                                    
+39 
+                                                  
+40 
+Vergiler Dahil Toplam Tutar   Sayı                          Evet 
+41  Ödenecek Tutar         Sayı                          Evet 
+42  Açıklama             Metin                          Hayır 
+43  QR Kodu             Metin                          Evet 
+----------------Page (11) Break----------------
+ 
+44  Özelleştirme No         Metin                          Evet 
+45 
+Muhasebeleştirildi mi?     Metin                          Evet 
+46 
+Fatura Durumu          Seçenek Listesi                    Evet 
+ 
+ 
+----------------Page (12) Break----------------
